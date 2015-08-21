@@ -1,13 +1,15 @@
-
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATtest_proportion
 # ------------------------------------------------------------------------------
-# Description:  It shows an interactive interface for the test of proportion.
-#               User can choose the test type, the hypothetical proportion,
-#               the significance level and the sample size with different data
-#               sets and variables.
+# Description:  Shows an interactive interface to show the the rejection area in a test of proportion which
+#               uses a normal approximation.
+#               The user can interactively choose the test type (two sided, less or greater), the hypothetical proportion,
+#               the significance level (in %) and the sample size. Also, a table with summary statistics regarding
+#               the sample, population and the test is given.
+#               The sample can be drawn for variables of the data sets
+#               BOSTON HOUSING and CREDIT.
 # ------------------------------------------------------------------------------
 # Datafiles:    CREDIT.rds, BOSTONHOUSING.rds
 # ------------------------------------------------------------------------------
@@ -16,17 +18,17 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It shows a proportion test in two sided test type and the 
-#               hypothetical proportion is set equal to 0.35 and significance is
-#               given to 10 percent. The test is performed under the sample size
-#               of 40 using the variable of SAVINGS of the data set of CREDIT.              
+# Example:      Shows a two sided test with hypothetical proportion = 0.35,
+#               significance level alpha = 10 % and sample size n = 40.
+#               The variable SAVINGS of the CREDIT data set is selected.           
 # ------------------------------------------------------------------------------
 # See also:     norm, BCS_NormPdfCdf, SMStestuscomp, hotellingstat,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Keywords:     test, plot, scatterplot, normal distribution, normal,
-#               visualization, data visualization, parameter, interactive
+#               visualization, data visualization, parameter, interactive,
+#               normal approximation, sampling, population, Hypothesis Testing
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

@@ -3,10 +3,10 @@
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATdotplot_location
 # ------------------------------------------------------------------------------
-# Description:  It shows the one dimensional dotplot. The main goal of this
-#               app is to show the location parameters of one dimensional data.
-#               The location parameters including mean and median can be chosen
-#               to show on the scatterplot.
+# Description:  Shows the one dimensional dotplot in a choosable type (overplot, jitter, stack).
+#               One can add the mean and the median to show the location parameters of one
+#               dimensional data as vertical lines.
+#               The user can choose between variables of the CARS and USCRIME data sets.
 # ------------------------------------------------------------------------------
 # Datafiles:    CARS.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
@@ -15,8 +15,8 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      The example shows the dotplot of POPULATION variable from the 
-#               data set of USCRIME.        
+# Example:      Shows the dotplot of the variable POPULATION of the 
+#               data set USCRIME.        
 # ------------------------------------------------------------------------------
 # See also:     MVAbluepullover, BCS_Boxplot, BCS_Boxplot2, MVAclususcrime
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 

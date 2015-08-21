@@ -1,20 +1,29 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATsample_param
 # ------------------------------------------------------------------------------
-# Description:  It shows statistics of univariate sample data, including the 
-#               mean, median, standard deviation and range of interquantile.
+# Description:  Shows estimated parameters for univariate data sample.
+#               The user can interactively choose the parameter that is estimated
+#               (mean, median, standard deviation, interquartile range) and the sample size.
+#               Also, variables of the data sets CARS, USCRIME and BOSTONHOUSING are available.
+#               The upper panel shows a a histogram of the parameter estimates of
+#               all previously drawn samples.
+#               The lower panel shows a scatterplot of the whole population (green) and
+#               the current sample (orange). A box indicates the interquartile range and
+#               the mean. q
 # ------------------------------------------------------------------------------
-# Inputs:       CARS.rds, USCRIME.rds, BOSTONHOUSING.rds
+# Datafiles:    CARS.rds, USCRIME.rds, BOSTONHOUSING.rds
 # ------------------------------------------------------------------------------
 # Inputs:       MMSTAThelper_function
 #               Options: interactive user choice
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It shows the histogram in upper panel and 2 boxplots in lower
-#               panel using the variable of POPULATION from USCRIME data set.              
+# Example:      Uses the variable POPULATION of the USCRIME data set.
+#               It shows the histogram of the mean estimates in the upper panel
+#               and the comparison of the population and the sample in the lower
+#               panel.              
 # ------------------------------------------------------------------------------
 # See also:     BCS_Hist1, BCS_Hist2, MSRsca_bmw_vw, BCS_Boxplot,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
@@ -22,7 +31,8 @@
 # ------------------------------------------------------------------------------
 # Keywords:     plot, scatterplot, histogram, boxplot, mean, median, quantile,
 #               visualization, data visualization, parameter, interactive, 
-#               uscrime
+#               uscrime, standard deviation, sampling, empirical, estimation,
+#               distribution
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

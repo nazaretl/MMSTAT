@@ -3,9 +3,9 @@
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATrank_correlation
 # ------------------------------------------------------------------------------
-# Description:  It shows a two dimensional contingency table. In the table,
-#               correlation measures like Spearman's rho and Kendall's tau can 
-#               be shown together.
+# Description:  Shows a two dimensional contingency table. In the table, the
+#               correlation measures Spearman's rho and Kendall's tau can 
+#               be shown. The user can interactively choose the row and column variables.
 # ------------------------------------------------------------------------------
 # Datafiles:    ALLBUS1992-ECON.rds, ALLBUS2002-ECON.rds, ALLBUS2012-ECON.rds,
 #               ALLBUS1994-TRUST.rds, ALLBUS2002-TRUST.rds, ALLBUS2012-TRUST.rds
@@ -15,9 +15,9 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      This example shows a contingency table using the variables
+# Example:      Shows the contingency table using the variables
 #               of TRUST:.HEALTH.SERVICE and TRUST:.ARMY. The Spearman's rank
-#               correlation and Kendall's rank correlation are given.               
+#               correlation and Kendall's rank correlation are computed.               
 # ------------------------------------------------------------------------------
 # See also:     MVAdrug, MVAdrugsim, COPcorrelation1, MMSTATtime_series_1, 
 #               MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 

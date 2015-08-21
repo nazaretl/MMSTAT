@@ -1,14 +1,16 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATvis_distr
 # ------------------------------------------------------------------------------
-# Description:  It gives an interface for user to visualize one dimensional 
-#               data with four diverse graphs including dotplot, histogram, 
-#               boxplot and plot of empirical cumulative distribution function. 
-#               A table containing detailed information of distribution 
-#               including mean, minimum, maximum, standard deviation, variance,
-#               range, median, quantile and interquantile range, is given.
+# Description:  Shows an interactive interface with 4 plots for univariate data
+#               (dotplot, histogram, boxplot, ECDF). The user can choose the dotplot
+#               type (overplot, jitter, stack), the number of bins in the histogram,
+#               and whether additional lines to indicate mean and variance are shown.
+#               The lower panel summarizes robust and non-robust location and dispersion
+#               parameters for the selected variable.
+#               Furthermore, the user can choose variables of the data sets
+#               USCRIME, CARS and DECATHLON.
 # ------------------------------------------------------------------------------
 # Datafiles:    CARS.rds, USCRIME.rds, DECATHLON.rds
 # ------------------------------------------------------------------------------
@@ -17,9 +19,8 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      A Shiny app shows dotplot, histogram, boxplot, empirical CDF and
-#               table of statistics using the variable of POPULATION in data set
-#               of USCRIME.              
+# Example:      Shows variable visualizations for the variable POPULATION in the data
+#               set USCRIME.     
 # ------------------------------------------------------------------------------
 # See also:     BCS_Boxplot, BCS_Hist1, BCS_Hist2, MVAboxcar, empcdf,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
@@ -27,7 +28,8 @@
 # ------------------------------------------------------------------------------
 # Keywords:     plot, histogram, boxplot, mean, variance, median, quantile,
 #               visualization, data visualization, parameter, interactive, 
-#               uscrime
+#               uscrime, binwidth, standard deviation, univariate, empirical,
+#               cdf
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

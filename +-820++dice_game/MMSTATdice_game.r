@@ -1,30 +1,29 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATdice_game
 # ------------------------------------------------------------------------------
-# Description:  It shows two conditional probabilities of two diverse dice under
-#               the condition of different number of sixes. There are two dice
-#               including a loaded dice and a fair dice. A histogram is given
-#               to describe the conditional probabilities for two dice.
+# Description:  Shows the conditional probability that the dice is either fair or loaded
+#               given the number of rolled sixes (X) in the upper panel.
+#               The lower panel shows a bar plot of the conditional probability to roll
+#               a specific number of sixes given a fair/loaded dice.
+#               The user can interactively choose (1) the number of rolls,
+#               (2) the number of rolled sixes for the upper panel and (3) the probability
+#               to roll a six with the loaded dice.
 # ------------------------------------------------------------------------------
 # Inputs:       MMSTAThelper_function
 #               Options: interactive user choice
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It shows the probabilities of two diverse dice under the 
-#               condition of the number of sixes equal to 1. In lower panel, it
-#               gives the histogram showing the distribution of the variable of
-#               'Number of sixes' for the fair dice in green and the loaded dice
-#               in orange. The number of rolls is set as 20 and the probability
-#               for six with loaded dice is set as about 0.66.          
+# Example:      The number of rolls is set to 20, the number of sixes is set to 1
+#               and the probability for six with loaded dice is set to 0.66.          
 # ------------------------------------------------------------------------------
 # See also:     BCS_Hist1, BCS_Hist2, MVAcondnorm, COPdaxnormhist
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     conditional distribution, histogram, plot, data visualization, 
+# Keywords:     conditional distribution, plot, data visualization, 
 #               visualization, cdf, interactive, estimation, parameter, 
 #               parametric           
 # ------------------------------------------------------------------------------

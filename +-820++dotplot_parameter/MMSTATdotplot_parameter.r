@@ -1,13 +1,13 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATdotplot_parameter
 # ------------------------------------------------------------------------------
-# Description:  It shows an one dimensional dotplot. The main goal of this app 
-#               is to show the location parameters of an univariate data.
-#               The location parameters including mean and median can be chosen
-#               to show on the scatterplot. Also the measures like range and 
-#               interquantile range, i.e. IQR, can be shown on the panel.
+# Description:  Shows the one dimensional dotplot in a choosable type (overplot, jitter, stack).
+#               One can add the mean and the median to show the location parameters of one
+#               dimensional data as vertical lines. The measures range and interquartile range (IQR)
+#               can be shown.
+#               The user can choose between variables of the CARS and USCRIME data sets.
 # ------------------------------------------------------------------------------
 # Datafiles:    CARS.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
@@ -16,8 +16,8 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      The example shows the dotplot with parameters including mean, 
-#               median, range and interquantile range for the variable PRICE in
+# Example:      Shows the dotplot with with additional lines to show the mean, 
+#               median, range and interquantile range for the variable PRICE of the
 #               CARS data set.             
 # ------------------------------------------------------------------------------
 # See also:     BCS_Boxplot, BCS_Boxplot2, MVAboxcar, SMSboxbank6

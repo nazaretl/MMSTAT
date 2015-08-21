@@ -1,12 +1,11 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATcorrelation
 # ------------------------------------------------------------------------------
-# Description:  It can show in main panel a 2-dimensional scatterplot, a
-#               3-dimensional scatterplot and a scatterplot matrix. Pearson's
-#               correlation and Spearman's rank correlation can be given under
-#               diverse settings of data sets and variables.
+# Description:  Shows either a 2D or 3D scatterplot and computes
+#               Pearson's correlation and Spearman's rank correlation for variables of
+#               the data sets CARS, DECATHLON and USCRIME.
 # ------------------------------------------------------------------------------
 # Datafiles:    CARS.rds, DECATHLON.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
@@ -15,16 +14,15 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      In main panel a 2-dimensional scatterplot is given with Pearson's
-#               correlation and Spearman's correlation using the data set of
-#               USCRIME, and variables of TOTALAREA and POPULATION are chosen.              
+# Example:      Shows the 2-dimensional scatterplot for the variables TOTALAREA and POPULATION
+#               in the data set USCRIME             
 # ------------------------------------------------------------------------------
 # See also:     BCS_Linreg, SFE5dim, MVAregbank, COPcorrelation1,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Keywords:     plot, scatterplot, correlation, data visualization, 
-#               visualization, uscrime, parameter, interactive
+#               visualization, estimation, parameter, interactive, uscrime, 3D
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

@@ -1,12 +1,15 @@
-
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATtest_mean_error
 # ------------------------------------------------------------------------------
-# Description:  It gives an interactive interface including options of sample 
-#               size, hypothetical mean and significance level for user to 
-#               choose to show the type 1 and 2 errors in the test of mean.
+# Description:  Shows an interactive interface to show the areas of type 1 and type 2
+#               errors in a t test.
+#               The user can interactively choose the test type (two sided, less or greater), the hypothetical mean,
+#               the significance level and the sample size. Also, a table with summary statistics regarding
+#               the sample, population and the test is given.
+#               The sample can be drawn for variables of the data sets
+#               BOSTON HOUSING and USCRIME.
 # ------------------------------------------------------------------------------
 # Datafiles:    BOSTONHOUSING.rds, USCRIME.rds,
 # ------------------------------------------------------------------------------
@@ -15,17 +18,16 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It shows the test of mean with type 1 and 2 error in the two
-#               tests. The hypothetical mean is set as 3.769 and the
-#               significance level is set as 5. Sample size equals 45 using the
-#               variable of POPULATION in USCRIME data set.    
+# Example:      Shows the t test with hypothetical mean mu = 3.769, significance level alpha = 5
+#               and sample size n = 45. The variable POPULATION of the USCRIME data set is selected.
 # ------------------------------------------------------------------------------
 # See also:     SMStestuscomp, hotellingstat, norm, MMSTATtime_series_1, 
 #               MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
 #               MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     test, error, mean, quantile, normal, data visualization, 
-#               parameter, interactive, uscrime
+# Keywords:     test, error, mean, quantile, t-distribution, data visualization, 
+#               parameter, interactive, uscrime, Hypothesis Testing, sampling,
+#               estimation, population, variance, standard deviation
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

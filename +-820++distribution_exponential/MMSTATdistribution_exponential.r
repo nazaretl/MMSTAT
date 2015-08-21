@@ -1,10 +1,11 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATdistribution_exponential
 # ------------------------------------------------------------------------------
-# Description:  It shows the pdf and the CDF of exponential distribution. The 
-#               parameters of mean and variance can be chosen by user. 
+# Description:  Shows the PDF and the CDF of the exponential distribution. The 
+#               parameter lambda can be chosen by the user. The user can also
+#               choose the normal distribution with changeable mean and variance.
 # ------------------------------------------------------------------------------
 # Inputs:       MMSTAThelper_function
 #               Options: interactive user choice
@@ -12,14 +13,15 @@
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
 # Example:      The example shows the density function for exponential 
-#               distribution with parameter of lambda equal to 1.               
+#               distribution with lambda = 1.               
 # ------------------------------------------------------------------------------
 # See also:     clt, BCS_Weibull, mixexprnd, BCS_ExpPdfCdf
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Keywords:     distribution, plot, cdf, pdf, exponential, visualization,
-#               parameter, interactive, parametric   
+#               parameter, interactive, parametric, normal, normal-distribution,
+#               mean, variance, density
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

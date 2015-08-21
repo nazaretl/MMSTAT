@@ -1,12 +1,13 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATcrosstable
 # ------------------------------------------------------------------------------
-# Description:  It shows a contingency table. In the table, four different 
-#               correlation measures including Chi-square, contingency 
-#               correlation, corrected contingency correlation and Cramer's V 
-#               can be computed and shown under the table.
+# Description:  Computes a contingency table. Additionally, four different 
+#               correlation measures can be given: Chi-square, contingency  correlation,
+#               corrected contingency correlation and Cramer's V.
+#               The user can interactively choose between variables of the data sets TITANIC
+#               and HAIR.EYE.COLOR.
 # ------------------------------------------------------------------------------
 # Datafiles:    TITANIC.rds, HAIR.EYE.COLOR.rds
 # ------------------------------------------------------------------------------
@@ -15,9 +16,8 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      The example shows the contingency table and related coefficients 
-#               by inputting the data set of HAIR.EYE.COLOR and two variables of
-#               COLOR.HAIR and COLOR.EYE.
+# Example:      Shows the contingency table and coefficients for the variables COLOR.HAIR
+#               and COLOR.EYE of the data set HAIR.EYE.COLOR.
 # ------------------------------------------------------------------------------
 # See also:     MVAcorrEyeHair, MVAcorrCar, MSECramervonMisestest,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 

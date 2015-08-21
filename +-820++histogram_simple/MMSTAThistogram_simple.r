@@ -1,14 +1,12 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTAThistogram_simple
 # ------------------------------------------------------------------------------
-# Description:  It produces an interactive interface to show the histogram. In 
-#               the most basic version only a histogram of the TOTALAREA from
-#               the USCRIME data set is shown. The user can interactively choose
-#               the number of bins. The user can choose different variables and 
-#               different data sets. In this quantlet there are 3 different 
-#               datasets: CARS, DECATHLON, USCRIME.
+# Description:  Produces an interactive interface to show the histogram. The default settings
+#               show the histogram of the variable TOTALAREA of the USCRIME data set.
+#               The number of bins can be chosen and there are variables of three data sets
+#               available: CARS, DECATHLON, USCRIME.
 # ------------------------------------------------------------------------------
 # Datafiles:    CARS.rds, DECATHLON.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
@@ -17,18 +15,15 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      The given application example of MMSTAThistogram_simple shows a
-#               histogram of the USCRIME data set with TOTALAREA as selected 
-#               variable. One can see the bins (in gray) in the histogram. The
-#               number of bins used in this example is equal to 30.
+# Example:      Shows a histogram of the variable TOTALAREA of the USCRIME data set.
+#               The number of bins is set to 30.
 # ------------------------------------------------------------------------------
 # See also:     COPdaxnormhist, COPdaxreturnhist, BCS_Hist2, BCS_Hist1,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     Parameters, data visualization, empirical, parameter, 
-#               parametric, visualization, variable selection, frequency,
-#               histogram, uscrime
+# Keywords:     data visualization, empirical, parameter, parametric, visualization,
+#               variable selection, frequency, histogram, uscrime
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------ 

@@ -1,31 +1,30 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATconfi_mean_len
 # ------------------------------------------------------------------------------
-# Description:  It gives an interactive interface of plot of confidence interval
-#               length in the cases of known standard deviation and unknown 
-#               standard deviation. In the user interface the confidence level, 
-#               the sample size and standard deviation are options for user to 
-#               choose.
+# Description:  Gives an interactive interface of the confidence interval
+#               length in the cases of both known and unknown standard deviation.
+#               The user can choose the confidence level, sample size and standard
+#               deviation. Additionally a line is shown which indicates the sample
+#               size needed for a specific confidence interval length.
 # ------------------------------------------------------------------------------
 # Inputs:       MMSTAThelper_function
 #               Options: interactive user choice
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It gives the curves for confidence interval length under known 
-#               standard deviation and unknown standard deviation. The sample
-#               size is set as 100 and standard deviation as 5. The confidence
-#               level is set as 95 percent.                
+# Example:      Gives the curves for confidence interval length under known 
+#               and unknown standard deviation for a sample size of 100,
+#               standard deviation equal to 5 and a confidence level equal to 95 %
 # ------------------------------------------------------------------------------
 # See also:     KI, BCS_Conf2sided, MMSTATtime_series_1, MMSTATlinreg, 
 #               MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
 #               MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     plot, sampling, confidence interval, variance, mean
-#               graphical representation, visualization, interactive,
-#               parameter, parametric
+# Keywords:     plot, confidence interval, variance, mean interactive
+#               graphical representation, visualization, normal-distribution
+#               parameter, parametric, normal
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

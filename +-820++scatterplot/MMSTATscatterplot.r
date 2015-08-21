@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATscatterplot
 # ------------------------------------------------------------------------------
-# Description:  It can show scatterplot in two dimensional case and in three
-#               dimensional case. At the same time the Pearson's correlation
-#               and the Spearman's rank correlation can also be given.
+# Description:  Shows either a 2D or 3D scatterplot. One has also the option to compute
+#               Pearson's correlation and Spearman's rank correlation for variables of
+#               the data sets CARS, DECATHLON and USCRIME.
 # ------------------------------------------------------------------------------
 # Datafiles:    CARS.rds, DECATHLON.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
@@ -14,15 +14,15 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      The example gives a 2-dimensional scatterplot using the data set
-#               of CARS, and variables of PRICE and MILEAGE are chosen.     
+# Example:      Shows the 2-dimensional scatterplot for the variables PRICE and MILEAGE
+#               in the data set CARS.     
 # ------------------------------------------------------------------------------
 # See also:     COPcorrelation1, COPcorrelation2, COPhac4firmsscatter, SFE5dim,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Keywords:     plot, scatterplot, correlation, data visualization, 
-#               visualization, estimation, parameter, interactive, uscrime
+#               visualization, estimation, parameter, interactive, uscrime, 3D
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------
@@ -32,10 +32,11 @@
 # rm(list=ls(all=TRUE))
 graphics.off()
 
-install.packages("scatterplot3d")
-install.packages("lattice")
-library("scatterplot3d")
-library("lattice")
+libraries = c("scatterplot3d", "lattice")
+lapply(libraries, function(x) if (!(x %in% installed.packages())) {
+    install.packages(x)
+})
+lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 
 # please set working directory setwd('C:/...') 
 

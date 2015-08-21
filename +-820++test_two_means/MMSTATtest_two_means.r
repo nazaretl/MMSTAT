@@ -1,12 +1,17 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATtest_two_means
 # ------------------------------------------------------------------------------
-# Description:  It gives an interactive interface including options of sample 
-#               size, hypothetical mean and significance level for user to test
-#               difference of two means for a sample drawing from a chosen 
-#               data set.
+# Description:  Shows an interactive interface to test for the equality of two means.
+#               The user can select the significance level alpha and the sample size for variable 1
+#               and variable 2, the data set and the respective variables.
+#               The upper panel shows the theoretical t-distribution and respective
+#               rejection areas depending on whether we assume equal or unequal variances of the variables. 
+#               The lower panel shows scatter plots of the population and the sample for both
+#               variables including boxed indicating the interquartile range and the mean.
+#               The samples can be drawn from ALLBUS2012-GENERAL, ALLBUS2002-GENERAL,
+#               and ALLBUS2004-GENERAL.
 # ------------------------------------------------------------------------------
 # Datafiles:    ALLBUS2012-GENERAL.rds, ALLBUS2002-GENERAL.rds,
 #               ALLBUS2004-GENERAL.rds
@@ -16,16 +21,17 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It shows the test for difference of two means with significance 
-#               equal to 5 percent and sample sizes of group 1 and group 2 are
-#               all equal to 30.        
+# Example:      Shows the test with alpha = 5%, size of sample 1 (n1) = 30 and 
+#               size of sample 2 (n2) = 30      
 # ------------------------------------------------------------------------------
 # See also:     SMStestuscomp, hotellingstat, BCS_Boxplot, norm,
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     test, plot, scatterplot, boxplot, mean, median, quantile,
-#               visualization, data visualization, parameter, interactive
+# Keywords:     test, plot, scatterplot, boxplot, mean, quantile, parametric
+#               visualization, data visualization, parameter, interactive,
+#               estimation, normal-distribution, t-distribution, Hypothesis Testing,
+#               sampling, population, variance
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

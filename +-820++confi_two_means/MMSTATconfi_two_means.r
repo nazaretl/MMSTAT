@@ -1,11 +1,15 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATconfi_two_means
 # ------------------------------------------------------------------------------
-# Description:  It shows the confidence interval for the difference of two means 
-#               from two groups with option of equal variance and unequal 
-#               variance. Three diverse data sets can be chosen.
+# Description:  Estimates and plots the confidence interval for the difference of two means 
+#               from two groups. The user can interactivaly choose the confidence level,
+#               the respective sample sizes, and whether to assume equal or unequal variance.
+#               In the lower panel, the population is shown and the interquartile range of
+#               the sample is indicated by boxes.
+#               Also, the user can choose between three data sets and set the variable and
+#               group variable used to compute draw the samples
 # ------------------------------------------------------------------------------
 # Datafiles:    ALLBUS2002-GENERAL.rds, ALLBUS2004-GENERAL.rds,
 #               ALLBUS2012-GENERAL.rds
@@ -15,21 +19,17 @@
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      A Shiny app shows in upper panel the confidence interval for 
-#               difference of two means from two samples of two populations. And
-#               the lower panel shows four boxplots including 2 boxplots in gray
-#               using data from samples and 2 boxplots in green using data from
-#               populations. In this example it is set that confidence level
-#               equals 0.95, and sample size from group 1 equals 55 compared 
-#               with sample size from group 2 equal to 70. Data set is chosen 
-#               with ALLBUS2012-GENERAL.rds and variable is chosen with AGE.
+# Example:      Shows the confidence interval for the settings: confidence level = 0.95,
+#               sample size of group one = 55, sample size of group 2 = 70.
+#               The considered data set is ALLBUS2012-GENERAL.rds and the variable is AGE.
 # ------------------------------------------------------------------------------
 # See also:     KI, BCS_Boxplot, BCS_Boxplot2, MVAdrafthousing 
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Keywords:     plot, sampling, confidence interval, mean, population,
-#               visualization, data visualization,  parameter, interactive, 
+#               visualization, data visualization, parameter, interactive, 
+#               t-distribution, distribution, estimation
 # ------------------------------------------------------------------------------
 # Author:       Yafei Xu
 # ------------------------------------------------------------------------------

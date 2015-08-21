@@ -1,27 +1,27 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Book:         MMSTAT
 # ------------------------------------------------------------------------------
 # Quantlet:     MMSTATdistribution_binom
 # ------------------------------------------------------------------------------
-# Description:  It produces an interactive interface to show the histogram of 
-#               binomial distribution. In the most basic version only one 
-#               histogram of binomial distribution with parameters of n = 10 and
-#               p = 0.5 is shown. The user can interactively choose different 
-#               number of draws and different probability of success per draw. 
-#               User can also choose to show the CDF of the binomial 
-#               distribution with a step function. The user can choose the other
-#               two distributions, including hyper-geometric distribution and 
-#               Poisson distribution.
+# Description:  Produces an interactive interface to show the probability mass 
+#               function (PDF) of the binomial distribution. The default settings produce a 
+#               histogram of the binomial distribution with parameters n = 10 and
+#               p = 0.5. The user can interactively choose a different 
+#               number of draws (n) and a different probability of success per draw (p). 
+#               The user can also choose to show the CDF of the binomial 
+#               distribution with a step function. The user can choose two
+#               other distributions: the hyper-geometric distribution and 
+#               the Poisson distribution.
 # ------------------------------------------------------------------------------
 # Inputs:       MMSTAThelper_function
 #               Options: interactive user choice
 # ------------------------------------------------------------------------------
 # output:       Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      The given application example shows a histogram of the binomial
-#               distribution with number of draws and probability of success per
-#               draw chosen from slide-bars. One can see the bins (in gray) to 
-#               approximate the PDF of the distribution.  
+# Example:      The given application example shows the probaility mass function 
+#               of the binomial distribution with number of draws (n = 10) and probability
+#               of success per draw (p = 0.5) chosen from slide-bars. One can see the PDF
+#               plotted as gray bins. 
 # ------------------------------------------------------------------------------
 # See also:     BCS_Hist1, BCS_Hist2, BCS_Binpdf, BCS_Binompdf, 
 #               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
