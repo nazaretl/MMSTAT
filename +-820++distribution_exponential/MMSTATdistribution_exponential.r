@@ -1,29 +1,23 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATdistribution_exponential
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdistribution_exponential
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows the PDF and the CDF of the exponential distribution. The 
-#               parameter lambda can be chosen by the user. The user can also
-#               choose the normal distribution with changeable mean and variance.
+# Description:      Shows the pdf and cdf of the exponential distribution. The parameter lambda can be chosen by the user.
+#                   One can also interactively plot the normal distribution with exchangeable mean and variance.
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Keywords:         distribution, plot, cdf, pdf, exponential, visualization, parameter, interactive, parametric,
+#                   normal, normal-distribution, mean, variance, density
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Input:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Example:      The example shows the density function for exponential 
-#               distribution with lambda = 1.               
+# Output:           Shows the density of the exponential distribution with lambda = 1.
+#                   Interactive user choice.
 # ------------------------------------------------------------------------------
-# See also:     clt, BCS_Weibull, mixexprnd, BCS_ExpPdfCdf
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         clt, BCS_Weibull, mixexprnd, BCS_ExpPdfCdf, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     distribution, plot, cdf, pdf, exponential, visualization,
-#               parameter, interactive, parametric, normal, normal-distribution,
-#               mean, variance, density
-# ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
 
 
