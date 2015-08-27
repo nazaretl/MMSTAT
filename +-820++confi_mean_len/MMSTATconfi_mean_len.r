@@ -1,37 +1,32 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTAT
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATconfi_mean_len
+# Published in:     MMSTATconfi_mean_len
 # ------------------------------------------------------------------------------
-# Description:  Gives an interactive interface of the confidence interval
-#               length in the cases of both known and unknown standard deviation.
-#               The user can choose the confidence level, sample size and standard
-#               deviation. Additionally a line is shown which indicates the sample
-#               size needed for a specific confidence interval length.
+# Description:      Provides an interactive interface of the confidence interval length in the cases of both known and
+#                   unknown standard deviation. The user can choose the confidence level, sample size and standard
+#                   deviation. Additionally, a line is shown which indicates the sample size needed for a specific
+#                   confidence interval length.
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Keywords:         plot, confidence interval, variance, mean, interactive, graphical representation, visualization,
+#                   normal-distribution, parameter, parametric, normal
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Input             MMSTAThelper_function
+#                   Options: interactive user choice
 # ------------------------------------------------------------------------------
-# Example:      Gives the curves for confidence interval length under known 
-#               and unknown standard deviation for a sample size of 100,
-#               standard deviation equal to 5 and a confidence level equal to 95 %
+# Output:           Shows the confidence interval length under known and unknown standard deviation for a sample size of 100,
+#                   standard deviation = 5 and a confidence level = 95%.
+#                   Interactive user choice.
 # ------------------------------------------------------------------------------
-# See also:     KI, BCS_Conf2sided, MMSTATtime_series_1, MMSTATlinreg, 
-#               MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
-#               MMSTAThelper_function
+# See also:         KI, BCS_Conf2sided, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma,
+#                   MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     plot, confidence interval, variance, mean interactive
-#               graphical representation, visualization, normal-distribution
-#               parameter, parametric, normal
-# ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
 
 # please use "Esc" key to jump out the run of Shiny app
 # clear history and close windows
-# rm(list = ls(all = TRUE))
+rm(list = ls(all = TRUE))
 graphics.off()
 
 # please set working directory
@@ -40,12 +35,8 @@ graphics.off()
 # setwd("~/...")      # linux
 source("MMSTAThelper_function.r")
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
-
 
 shiny = sessionInfo()$otherPkgs$shiny
 
@@ -66,8 +57,7 @@ mmstat.ui.elem("size", "sampleSize",
                label = gettext("Max. sample size"))
 mmstat.ui.elem("cex", "fontSize")
 
-sqr = function(x) { return(x*x) }
-
+sqr    = function(x) { return(x*x) }
 server = shinyServer(function(input, output, session) {  
   
   output$conflevelUI = renderUI({ mmstat.ui.call('conflevel') })
@@ -98,16 +88,16 @@ server = shinyServer(function(input, output, session) {
     oma  = mmstat$UI$conflevel$ticks[inp$conflevel]/100
     ln   = 2 * inp$sigmavar / sqrt(nval) * qnorm(1 - (1 - oma) / 2)
     lt   = 2 * inp$sigmavar/sqrt(nval) * qt(1 - (1 - oma) / 2, nval - 1)
-    plot(0,0, 
-      xlim     = c(0, size), 
-      ylim     = c(0,mmstat$UI$length$max), 
-      type     = "n",
-      xlab     = gettext("Sample size"), 
-      ylab     = gettext("Confidence interval length"),
-      cex.axis = inp$cex,
-      cex.lab  = inp$cex,
-      cex.main = 1.2 * inp$cex,
-      cex.sub  = inp$cex)
+    plot(0, 0, 
+         xlim     = c(0, size), 
+         ylim     = c(0,mmstat$UI$length$max), 
+         type     = "n",
+         xlab     = gettext("Sample size"), 
+         ylab     = gettext("Confidence interval length"),
+         cex.axis = inp$cex,
+         cex.lab  = inp$cex,
+         cex.main = 1.2 * inp$cex,
+         cex.sub  = inp$cex)
 
     lines(nval, ln, col = mmstat$col[[1]], lwd = 2)
     if ((inp$length > min(ln)) && (inp$length < max(ln))) {
@@ -133,7 +123,7 @@ server = shinyServer(function(input, output, session) {
     
     legend("topright", 
            legend = c(mmstat.math(" &sigma; known"), 
-                    mmstat.math((" &sigma; estimated"))), 
+                      mmstat.math((" &sigma; estimated"))), 
            lwd    = 2, 
            col    = c(mmstat$col[[1]], 
                       mmstat$col[[2]]), 
@@ -146,11 +136,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
     
@@ -186,17 +173,8 @@ ui = shinyUI(fluidPage(
 
   htmlOutput("logText")
   ))
-  
-  
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-#
-
-
-
-
-
