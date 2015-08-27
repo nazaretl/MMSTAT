@@ -9,10 +9,11 @@
 # Keywords:         distribution, plot, cdf, pdf, exponential, visualization, parameter, interactive, parametric,
 #                   normal, normal-distribution, mean, variance, density
 # ------------------------------------------------------------------------------
-# Input:            MMSTAThelper_function
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Output:           Shows the density of the exponential distribution with lambda = 1.
-#                   Interactive user choice.
+# Output:           Interactive user choice.
+# ------------------------------------------------------------------------------
+# Example:          Shows the density of the exponential distribution with lambda = 1.
 # ------------------------------------------------------------------------------
 # See also:         clt, BCS_Weibull, mixexprnd, BCS_ExpPdfCdf, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
@@ -328,5 +329,3 @@ ui = shinyUI(fluidPage(
 ### shinyApp #################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
