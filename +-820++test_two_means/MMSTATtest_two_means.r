@@ -1,58 +1,53 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATtest_two_means
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATtest_two_means
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows an interactive interface to test for the equality of two means.
-#               The user can select the significance level alpha and the sample size for variable 1
-#               and variable 2, the data set and the respective variables.
-#               The upper panel shows the theoretical t-distribution and respective
-#               rejection areas depending on whether we assume equal or unequal variances of the variables. 
-#               The lower panel shows scatter plots of the population and the sample for both
-#               variables including boxed indicating the interquartile range and the mean.
-#               The samples can be drawn from ALLBUS2012-GENERAL, ALLBUS2002-GENERAL,
-#               and ALLBUS2004-GENERAL.
+# Description:      Shows an interactive interface to test for the equality of two means.
+#                   The user can select the significance level alpha and the sample size for variable 1
+#                   and variable 2, the data set and the respective variables.
+#                   The upper panel shows the theoretical t-distribution and respective
+#                   rejection areas depending on whether we assume equal or unequal variances of the variables. 
+#                   The lower panel shows scatter plots of the population and the sample for both
+#                   variables including boxed indicating the interquartile range and the mean.
+#                   The samples can be drawn from ALLBUS2012-GENERAL, ALLBUS2002-GENERAL,
+#                   and ALLBUS2004-GENERAL.
 # ------------------------------------------------------------------------------
-# Datafiles:    ALLBUS2012-GENERAL.rds, ALLBUS2002-GENERAL.rds,
-#               ALLBUS2004-GENERAL.rds
+# Keywords:         test, plot, scatterplot, boxplot, mean, quantile, parametric
+#                   visualization, data visualization, parameter, interactive,
+#                   estimation, normal-distribution, t-distribution, Hypothesis Testing,
+#                   sampling, population, variance
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the test with alpha = 5%, size of sample 1 (n1) = 30 and 
-#               size of sample 2 (n2) = 30      
+# Example:          Shows the test with alpha = 5%, size of sample 1 (n1) = 30 and 
+#                   size of sample 2 (n2) = 30      
 # ------------------------------------------------------------------------------
-# See also:     SMStestuscomp, hotellingstat, BCS_Boxplot, norm,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         SMStestuscomp, hotellingstat, BCS_Boxplot, norm,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     test, plot, scatterplot, boxplot, mean, quantile, parametric
-#               visualization, data visualization, parameter, interactive,
-#               estimation, normal-distribution, t-distribution, Hypothesis Testing,
-#               sampling, population, variance
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        ALLBUS2012-GENERAL.rds, ALLBUS2002-GENERAL.rds,
+#                   ALLBUS2004-GENERAL.rds
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
+
 mmstat.plotTestRegions = function(crit, xlim, ylim, cex, close = F, col = "black", 
   label = NULL, pos = 1) {
   lines(xlim, c(ylim[1], ylim[1]), col = col)
@@ -368,11 +363,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class="navbar navbar-static-top",
@@ -418,11 +410,7 @@ ui = shinyUI(fluidPage(
       htmlOutput("logText")
   ))
   
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
