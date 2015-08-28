@@ -1,53 +1,51 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATtest_proportion
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATtest_proportion
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows an interactive interface to show the the rejection area in a test of proportion which
-#               uses a normal approximation.
-#               The user can interactively choose the test type (two sided, less or greater), the hypothetical proportion,
-#               the significance level (in %) and the sample size. Also, a table with summary statistics regarding
-#               the sample, population and the test is given.
-#               The sample can be drawn for variables of the data sets
-#               BOSTON HOUSING and CREDIT.
+# Description:      Shows an interactive interface to show the the rejection area in a test of proportion which
+#                   uses a normal approximation.
+#                   The user can interactively choose the test type (two sided, less or greater), the hypothetical proportion,
+#                   the significance level (in %) and the sample size. Also, a table with summary statistics regarding
+#                   the sample, population and the test is given.
+#                   The sample can be drawn for variables of the data sets
+#                   BOSTON HOUSING and CREDIT.
 # ------------------------------------------------------------------------------
-# Datafiles:    CREDIT.rds, BOSTONHOUSING.rds
+# Keywords:         test, plot, scatterplot, normal distribution, normal,
+#                   visualization, data visualization, parameter, interactive,
+#                   normal approximation, sampling, population, Hypothesis Testing
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows a two sided test with hypothetical proportion = 0.35,
-#               significance level alpha = 10 % and sample size n = 40.
-#               The variable SAVINGS of the CREDIT data set is selected.           
+# Example:          Shows a two sided test with hypothetical proportion = 0.35,
+#                   significance level alpha = 10 % and sample size n = 40.
+#                   The variable SAVINGS of the CREDIT data set is selected.           
 # ------------------------------------------------------------------------------
-# See also:     norm, BCS_NormPdfCdf, SMStestuscomp, hotellingstat,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         norm, BCS_NormPdfCdf, SMStestuscomp, hotellingstat,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     test, plot, scatterplot, normal distribution, normal,
-#               visualization, data visualization, parameter, interactive,
-#               normal approximation, sampling, population, Hypothesis Testing
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CREDIT.rds, BOSTONHOUSING.rds
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
+
 mmstat.plotTestRegions = function(crit, xlim, ylim, cex, close = F, col = "black", 
   label = NULL, pos = 1) {
   lines(xlim, c(ylim[1], ylim[1]), col = col)
@@ -340,11 +338,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class="navbar navbar-static-top",
@@ -391,11 +386,7 @@ ui = shinyUI(fluidPage(
   htmlOutput("logText")
   ))
   
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
