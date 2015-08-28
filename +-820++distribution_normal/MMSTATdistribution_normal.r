@@ -3,24 +3,20 @@
 # ------------------------------------------------------------------------------
 # Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:      Shows the PDF and the CDF of the normal distribution. The 
-#                   parameters of mean and variance can be chosen by the user. The user can also
-#                   choose the exponential distribution with changeable parameter lambda.
+# Description:      Shows the pdf and the cdf of the normal distribution. The parameters of mean and variance can be changed
+#                   interactively. The user can also plot the exponential distribution with adjustable parameter lambda.
 # ------------------------------------------------------------------------------
-# Keywords:         distribution, plot, cdf, pdf, exponential, visualization,
-#                   parameter, interactive, parametric, normal, normal-distribution,
-#                   mean, variance, density
+# Keywords:         distribution, plot, cdf, pdf, exponential, visualization, parameter, interactive, parametric, normal,
+#                   normal-distribution, mean, variance, density
 # ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:           Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:          Shows the density function for normal distribution 
-#                   with mean = 0 and variance = 1.  
+# Example:          Shows the density function of the normal distribution with mean = 0 and variance = 1.  
 # ------------------------------------------------------------------------------
-# See also:         norm, SFEDaxReturnDistribution, norm2, MSEedfnormal  
-#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         norm, SFEDaxReturnDistribution, norm2, MSEedfnormal, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function, MMSTATdistribution_exponential
 # ------------------------------------------------------------------------------
 # Author:           Yafei Xu
 # ------------------------------------------------------------------------------ 
