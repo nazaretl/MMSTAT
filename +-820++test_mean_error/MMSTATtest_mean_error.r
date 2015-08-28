@@ -1,52 +1,49 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATtest_mean_error
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATtest_mean_error
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows an interactive interface to show the areas of type 1 and type 2
-#               errors in a t test.
-#               The user can interactively choose the test type (two sided, less or greater), the hypothetical mean,
-#               the significance level and the sample size. Also, a table with summary statistics regarding
-#               the sample, population and the test is given.
-#               The sample can be drawn for variables of the data sets
-#               BOSTON HOUSING and USCRIME.
+# Description:      Shows an interactive interface to show the areas of type 1 and type 2
+#                   errors in a t test.
+#                   The user can interactively choose the test type (two sided, less or greater), the hypothetical mean,
+#                   the significance level and the sample size. Also, a table with summary statistics regarding
+#                   the sample, population and the test is given.
+#                   The sample can be drawn for variables of the data sets
+#                   BOSTON HOUSING and USCRIME.
 # ------------------------------------------------------------------------------
-# Datafiles:    BOSTONHOUSING.rds, USCRIME.rds,
+# Keywords:         test, error, mean, quantile, t-distribution, data visualization, 
+#                   parameter, interactive, uscrime, Hypothesis Testing, sampling,
+#                   estimation, population, variance, standard deviation
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the t test with hypothetical mean mu = 3.769, significance level alpha = 5
-#               and sample size n = 45. The variable POPULATION of the USCRIME data set is selected.
+# Example:          Shows the t test with hypothetical mean mu = 3.769, significance level alpha = 5
+#                   and sample size n = 45. The variable POPULATION of the USCRIME data set is selected.
 # ------------------------------------------------------------------------------
-# See also:     SMStestuscomp, hotellingstat, norm, MMSTATtime_series_1, 
-#               MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
-#               MMSTATassociation, MMSTAThelper_function
+# See also:         SMStestuscomp, hotellingstat, norm, MMSTATtime_series_1, 
+#                   MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
+#                   MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     test, error, mean, quantile, t-distribution, data visualization, 
-#               parameter, interactive, uscrime, Hypothesis Testing, sampling,
-#               estimation, population, variance, standard deviation
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        BOSTONHOUSING.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
+
 mmstat.plotTestRegions = function(crit, xlim, ylim, cex, close = F, col = "black", 
   label = NULL, pos = 1) {
   lines(xlim, c(ylim[1], ylim[1]), col = col)
@@ -75,7 +72,6 @@ mmstat.plotTestRegions = function(crit, xlim, ylim, cex, close = F, col = "black
       text(xlim[2], mmstat.pos(ylim, -0.25), label, col = col, cex = cex, pos = 2)
   }
 }
-
 
 mmstat.ui.elem("test", 'radioButtons', 
                 label    = gettext("Choose test type"), 
@@ -369,12 +365,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
-
 
 ui = shinyUI(fluidPage(
   
@@ -419,12 +411,8 @@ ui = shinyUI(fluidPage(
 
       htmlOutput("logText")
   ))
-  
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
