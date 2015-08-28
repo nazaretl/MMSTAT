@@ -1,58 +1,50 @@
+
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATdistribution_poisson
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdistribution_poisson
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  It produces an interactive interface to show the histogram of 
-#               Poisson distribution. In the most basic version only one 
-#               histogram of Poisson distribution with parameter of Lambda = 2
-#               is shown. The user can interactively choose different value 
-#               of parameter. User can also choose to show the CDF of Poisson 
-#               distribution with a step function. The user can choose the other
-#               two distributions, including hyper-geometric distribution and 
-#               binomial distribution.
+# Description:      Produces an interactive interface to show the probability mass 
+#                   function (PDF) of the Poisson distribution. The default settings produce a 
+#                   histogram of the Poisson distribution with parameters Lambda = 2.
+#                   The user can interactively choose a different number of parameter (Lambda). 
+#                   The user can also choose to show the CDF of the Poisson distribution
+#                   with a step function. The user can choose two other distributions: 
+#                   the binomial distribution and the hypergeometric distribution.
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Keywords:         discrete, histogram, plot, poisson, binomial, 
+#                   data visualization, empirical, estimation, parameter, 
+#                   parametric, visualization, cdf, interactive, pdf 
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Example:      The given application example of MMSTATdistribution_poisson shows 
-#               a histogram of the Poisson distribution with parameter of Lambda
-#               equal to 2 chosen from the slide-bar of parameter. One can see 
-#               the bins (in gray) used to approximate the PDF of the 
-#               distribution. 
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# See also:     BCS_Hist1, BCS_Hist2, MMSTATtime_series_1, MMSTATlinreg, 
-#               MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
-#               MMSTAThelper_function
+# Example:          Shows the probability mass function 
+#                   of the Poisson distribution with parameter (Lambda = 8). One can 
+#                   see the PDF plotted as gray bins.
 # ------------------------------------------------------------------------------
-# Keywords:     discrete, histogram, plot, poisson, binomial, 
-#               parameter, parametric, visualization, distribution  
+# See also:         BCS_Hist1, BCS_Hist2, MMSTATtime_series_1, MMSTATlinreg, 
+#                   MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
+#                   MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------ 
 
-
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
-source("MMSTAThelper_function.r")
 
+source("MMSTAThelper_function.r")
 
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
 ##############################################################################
-
 
 gv     = list(dist = "mmstat", xlim = NULL, ylim = NULL)
 distrd = "POIS"
@@ -337,7 +329,6 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
@@ -417,5 +408,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
