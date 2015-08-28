@@ -1,47 +1,42 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATcrosstable
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATcrosstable
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Computes a contingency table. Additionally, four different 
-#               correlation measures can be given: Chi-square, contingency  correlation,
-#               corrected contingency correlation and Cramer's V.
-#               The user can interactively choose between variables of the data sets TITANIC
-#               and HAIR.EYE.COLOR.
+# Description:      Computes a contingency table. Additionally, four different 
+#                   correlation measures can be given: Chi-square, contingency  correlation,
+#                   corrected contingency correlation and Cramer's V.
+#                   The user can interactively choose between variables of the data sets TITANIC
+#                   and HAIR.EYE.COLOR.
 # ------------------------------------------------------------------------------
-# Datafiles:    TITANIC.rds, HAIR.EYE.COLOR.rds
+# Keywords:         contingency table, correlation, Chisquare, chi-square test
+#                   discrete,  parameter, interactive, parametric
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the contingency table and coefficients for the variables COLOR.HAIR
-#               and COLOR.EYE of the data set HAIR.EYE.COLOR.
+# Example:          Shows the contingency table and coefficients for the variables COLOR.HAIR
+#                   and COLOR.EYE of the data set HAIR.EYE.COLOR.
 # ------------------------------------------------------------------------------
-# See also:     MVAcorrEyeHair, MVAcorrCar, MSECramervonMisestest,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         MVAcorrEyeHair, MVAcorrCar, MSECramervonMisestest,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     contingency table, correlation, Chisquare, chi-square test
-#               discrete,  parameter, interactive, parametric
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        TITANIC.rds, HAIR.EYE.COLOR.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
-# source("MMSTAThelper_function.r")
-source("MMSTAThelper_function.r")
 
+source("MMSTAThelper_function.r")
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
@@ -122,7 +117,6 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
@@ -173,5 +167,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
