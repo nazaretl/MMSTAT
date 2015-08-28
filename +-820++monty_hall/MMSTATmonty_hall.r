@@ -1,49 +1,49 @@
+# ------------------------------------------------------------------------------
+# Name of Quantlet: MMSTATmonty_hall
+# ------------------------------------------------------------------------------
+# Published in:     MMSTAT
+# ------------------------------------------------------------------------------
+# Description:      Shows a plot of relative frequency of successful trials under
+#                   two scenarios of success probabilities of 1/3 and 2/3. The user
+#                   can choose an option of guest points and a type of guest's decisions. 
+# ------------------------------------------------------------------------------
+# Keywords:         plot, scatterplot, mean, visualization, probability,
+#                   estimation, parameter, interactive
+# ------------------------------------------------------------------------------
+# Usage:            MMSTAThelper_function
+# ------------------------------------------------------------------------------
+# Output:           Interactive shiny application
+# ------------------------------------------------------------------------------
+# Example:          Shows a plot of relative frequency of successful trials under
+#                   241 times of directions in the scenario of "keep door". It 
+#                   converges to 1/3, which is the success probability.              
+# ------------------------------------------------------------------------------
+# See also:         BCS_Bincdf, SFEclt, MVAcltbern, MMSTAThelper_function,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation
+# ------------------------------------------------------------------------------
+# Author:           Yafei Xu
+# ------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
-# Book:         MMStat
-# ------------------------------------------------------------------------------
-# Quantlet:     MMSTATmonty_hall
-# ------------------------------------------------------------------------------
-# Description:  It shows a plot of relative frequency of successful trials under
-#               two scenarios of success probabilities of 1/3 and 2/3.
-# ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
-# ------------------------------------------------------------------------------
-# output:       Interactive shiny application
-# ------------------------------------------------------------------------------
-# Example:      It shows a plot of relative frequency of successful trials under
-#               241 times of direction in the scenario of "keep door". It 
-#               converges to 1/3, which is the success probability.              
-# ------------------------------------------------------------------------------
-# See also:     BCS_Bincdf, SFEclt, MVAcltbern, MMSTAThelper_function,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation
-# ------------------------------------------------------------------------------
-# Keywords:     plot, scatterplot, mean, visualization, probability,
-#               estimation, parameter, interactive
-# ------------------------------------------------------------------------------
-# Author:       Yafei Xu
-# ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-install.packages("png")
-library(png)
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
+libraries = c("png")
+lapply(libraries, function(x) if (!(x %in% installed.packages())) {
+    install.packages(x)
+})
+lapply(libraries, library, quietly = TRUE, character.only = TRUE)
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
-
 
 pdc = gettext(c("to left door", "to middle door", 
                 "to right door", "randomly to a door"), 
@@ -183,8 +183,6 @@ server = shinyServer(function(input, output, session) {
     abline(h = 2/3, col = "gray20")
   })
   
-  
-
   output$myPlot1 = renderPlot({
     if (mh$time < 3) {
       mh$time <<- mh$time + 1
@@ -198,58 +196,52 @@ server = shinyServer(function(input, output, session) {
     }
     invalidateLater(200, session)
     par(mfrow = c(2, 3))
-  ###### [1,1]
-    ima11 = readPNG(paste("C:\\www\\", door(1, mh$time), sep = ""))
+    ###### [1,1]
+    ima11 = readPNG(paste("\\www\\", door(1, mh$time), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))   
     lim = par()
     rasterImage(ima11, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
+
   
     ###### [1,2]
-    ima12 = readPNG(paste("C:\\www\\", door(2, mh$time), sep = ""))
+    ima12 = readPNG(paste("\\www\\", door(2, mh$time), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima12, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [1,3]
-    ima13 = readPNG(paste("C:\\www\\", door(3, mh$time), sep = ""))
+    ima13 = readPNG(paste("\\www\\", door(3, mh$time), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima13, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [2,1]
-    ima21 = readPNG(paste("C:\\www\\", point(1), sep = ""))
+    ima21 = readPNG(paste("\\www\\", point(1), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima21, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [2,2]
-    ima22 = readPNG(paste("C:\\www\\", point(2), sep = ""))
+    ima22 = readPNG(paste("\\www\\", point(2), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima22, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [2,3]
-    ima23 = readPNG(paste("C:\\www\\", point(3), sep = ""))
+    ima23 = readPNG(paste("\\www\\", point(3), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima23, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
-
-    
   })
 
-  
   output$logText = renderText({
     mmstat.getLog(session)
   })
 })
 
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
-
 
 ui = shinyUI(fluidPage(
   div(class="navbar navbar-static-top",
@@ -291,11 +283,8 @@ ui = shinyUI(fluidPage(
     htmlOutput("logText")
     
 ))  
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
