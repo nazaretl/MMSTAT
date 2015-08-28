@@ -1,46 +1,38 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATdistribution_normal
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdistribution_normal
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  It produces an interactive interface to show the curve of 
-#               PDF of normal distribution. In the most basic version only one 
-#               curve of normal distribution with parameter of mean = 10 and
-#               variance = 1 is shown. User can interactively choose different 
-#               mean and different variance. User can also choose to show the 
-#               CDF of the normal distribution. The user can choose another 
-#               distribution, the exponential distribution.
+# Description:      Shows the PDF and the CDF of the normal distribution. The 
+#                   parameters of mean and variance can be chosen by the user. The user can also
+#                   choose the exponential distribution with changeable parameter lambda.
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Keywords:         distribution, plot, cdf, pdf, exponential, visualization,
+#                   parameter, interactive, parametric, normal, normal-distribution,
+#                   mean, variance, density
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Example:      The given application example of MMSTATdistribution_normal shows 
-#               a curve of PDF of normal distribution with mean = 10 and
-#               variance = 1. One can see the bell curve in the main panel.
+# output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# See also:     norm, SFEDaxReturnDistribution, norm2, MSEedfnormal  
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# Example:          Shows the density function for normal distribution 
+#                   with mean = 0 and variance = 1.  
 # ------------------------------------------------------------------------------
-# Keywords:     plot, cdf, pdf, standard normal, distribution
-#               parameter, parametric, visualization
+# See also:         norm, SFEDaxReturnDistribution, norm2, MSEedfnormal  
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------ 
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
-# source("MMSTAThelper_function.r")
+
 source("MMSTAThelper_function.r")
 
 ##############################################################################
@@ -350,5 +342,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
