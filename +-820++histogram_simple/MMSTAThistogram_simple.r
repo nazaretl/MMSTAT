@@ -1,51 +1,44 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTAThistogram_simple
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTAThistogram_simple
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Produces an interactive interface to show the histogram. The default settings
-#               show the histogram of the variable TOTALAREA of the USCRIME data set.
-#               The number of bins can be chosen and there are variables of three data sets
-#               available: CARS, DECATHLON, USCRIME.
+# Description:      Produces an interactive interface to show the histogram. The default settings
+#                   show the histogram of the variable TOTALAREA of the USCRIME data set.
+#                   The number of bins can be chosen and there are variables of three data sets
+#                   available: CARS, DECATHLON, USCRIME.
 # ------------------------------------------------------------------------------
-# Datafiles:    CARS.rds, DECATHLON.rds, USCRIME.rds
+# Keywords:         data visualization, empirical, parameter, parametric, visualization,
+#                   variable selection, frequency, histogram, uscrime
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows a histogram of the variable TOTALAREA of the USCRIME data set.
-#               The number of bins is set to 30.
+# Example:          Shows a histogram of the variable TOTALAREA of the USCRIME data set.
+#                   The number of bins is set to 30.
 # ------------------------------------------------------------------------------
-# See also:     COPdaxnormhist, COPdaxreturnhist, BCS_Hist2, BCS_Hist1,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         COPdaxnormhist, COPdaxreturnhist, BCS_Hist2, BCS_Hist1,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     data visualization, empirical, parameter, parametric, visualization,
-#               variable selection, frequency, histogram, uscrime
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CARS.rds, DECATHLON.rds, USCRIME.rds
 # ------------------------------------------------------------------------------ 
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
 
 mmstat$vartype = 'numvars'
 
@@ -110,11 +103,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class = "navbar navbar-static-top",
@@ -155,11 +145,8 @@ ui = shinyUI(fluidPage(
 
   htmlOutput("logText")  
 ))
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
