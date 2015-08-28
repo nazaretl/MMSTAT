@@ -1,42 +1,39 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATcorrelation
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATcorrelation
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows either a 2D or 3D scatterplot and computes
-#               Pearson's correlation and Spearman's rank correlation for variables of
-#               the data sets CARS, DECATHLON and USCRIME.
+# Description:      Shows either a 2D or 3D scatterplot and computes
+#                   Pearson's correlation and Spearman's rank correlation for variables of
+#                   the data sets CARS, DECATHLON and USCRIME.
 # ------------------------------------------------------------------------------
-# Datafiles:    CARS.rds, DECATHLON.rds, USCRIME.rds
+# Keywords:         plot, scatterplot, correlation, data visualization, 
+#                   visualization, estimation, parameter, interactive, uscrime, 3D
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the 2-dimensional scatterplot for the variables TOTALAREA and POPULATION
-#               in the data set USCRIME             
+# Example:          Shows the 2-dimensional scatterplot for the variables TOTALAREA and POPULATION
+#                   in the data set USCRIME             
 # ------------------------------------------------------------------------------
-# See also:     BCS_Linreg, SFE5dim, MVAregbank, COPcorrelation1,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         BCS_Linreg, SFE5dim, MVAregbank, COPcorrelation1,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     plot, scatterplot, correlation, data visualization, 
-#               visualization, estimation, parameter, interactive, uscrime, 3D
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CARS.rds, DECATHLON.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
 ##############################################################################
@@ -49,7 +46,6 @@ lapply(libraries, function(x) if (!(x %in% installed.packages())) {
     install.packages(x)
 })
 lapply(libraries, library, quietly = TRUE, character.only = TRUE)
-
 
 mmstat$vartype = "numvars"
 mmstat.ui.elem("graph", "radioButtons", 
@@ -132,7 +128,6 @@ shinyServer(function(input, output, session) {
                          choices = mmstat.getVarNames(inp$dataset, "numeric"))
     ret
   })
-  
   
   observe({
     inp = mmstat.getValues(NULL, dataset = input$dataset)
@@ -308,7 +303,6 @@ shinyServer(function(input, output, session) {
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
 ##############################################################################
-
 
 mmstat$vartype = 'numvars'
 mmstat.ui.elem("graph", 'radioButtons',
@@ -590,9 +584,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
-
-
-
-
