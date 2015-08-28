@@ -1,52 +1,45 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATtest_mean
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATtest_mean
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  It gives an interactive interface including options of sample 
-#               size, hypothetical mean and significance level for user to test
-#               the mean value of a sample drawing from a chosen data set.
+# Description:      Gives an interactive interface including options of sample 
+#                   size, hypothetical mean and significance level for user to test
+#                   the mean value of a sample drawing from a chosen data set.
 # ------------------------------------------------------------------------------
-# Datafiles:    USCRIME.rds, BOSTONHOUSING.rds
+# Keywords:         test, plot, scatterplot, boxplot, mean, median, quantile,
+#                   visualization, data visualization, parameter, interactive, 
+#                   uscrime
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      It shows the mean test with hypothetical mean equal to 3.61 and
-#               significance level equal to 5 percent under the context of 
-#               sample size of 30.              
+# Example:          Shows the mean test with hypothetical mean equal to 3.61 and
+#                   significance level equal to 5 percent under the context of 
+#                   sample size of 30.              
 # ------------------------------------------------------------------------------
-# See also:     BCS_tPdfCdf, BCS_NormPdfCdf, BCS_Boxplot, norm,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         BCS_tPdfCdf, BCS_NormPdfCdf, BCS_Boxplot, norm,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     test, plot, scatterplot, boxplot, mean, median, quantile,
-#               visualization, data visualization, parameter, interactive, 
-#               uscrime
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        USCRIME.rds, BOSTONHOUSING.rds
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
-
 
 mmstat$vartype = "numvars"
 
@@ -264,10 +257,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class="navbar navbar-static-top",
@@ -313,11 +304,7 @@ ui = shinyUI(fluidPage(
       htmlOutput("logText")
 ))
   
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
