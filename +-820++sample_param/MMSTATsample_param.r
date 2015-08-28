@@ -1,59 +1,53 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATsample_param
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATsample_param
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows estimated parameters for univariate data sample.
-#               The user can interactively choose the parameter that is estimated
-#               (mean, median, standard deviation, interquartile range) and the sample size.
-#               Also, variables of the data sets CARS, USCRIME and BOSTONHOUSING are available.
-#               The upper panel shows a a histogram of the parameter estimates of
-#               all previously drawn samples.
-#               The lower panel shows a scatterplot of the whole population (green) and
-#               the current sample (orange). A box indicates the interquartile range and
-#               the mean. q
+# Description:      Shows estimated parameters for univariate data sample.
+#                   The user can interactively choose the parameter that is estimated
+#                   (mean, median, standard deviation, interquartile range) and the sample size.
+#                   Also, variables of the data sets CARS, USCRIME and BOSTONHOUSING are available.
+#                   The upper panel shows a a histogram of the parameter estimates of
+#                   all previously drawn samples.
+#                   The lower panel shows a scatterplot of the whole population (green) and
+#                   the current sample (orange). A box indicates the interquartile range and
+#                   the mean. 
 # ------------------------------------------------------------------------------
-# Datafiles:    CARS.rds, USCRIME.rds, BOSTONHOUSING.rds
+# Keywords:         plot, scatterplot, histogram, boxplot, mean, median, quantile,
+#                   visualization, data visualization, parameter, interactive, 
+#                   uscrime, standard deviation, sampling, empirical, estimation,
+#                   distribution
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Uses the variable POPULATION of the USCRIME data set.
-#               It shows the histogram of the mean estimates in the upper panel
-#               and the comparison of the population and the sample in the lower
-#               panel.              
+# Example:          Uses the variable POPULATION of the USCRIME data set.
+#                   It shows the histogram of the mean estimates in the upper panel
+#                   and the comparison of the population and the sample in the lower
+#                   panel.              
 # ------------------------------------------------------------------------------
-# See also:     BCS_Hist1, BCS_Hist2, MSRsca_bmw_vw, BCS_Boxplot,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         BCS_Hist1, BCS_Hist2, MSRsca_bmw_vw, BCS_Boxplot,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     plot, scatterplot, histogram, boxplot, mean, median, quantile,
-#               visualization, data visualization, parameter, interactive, 
-#               uscrime, standard deviation, sampling, empirical, estimation,
-#               distribution
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CARS.rds, USCRIME.rds, BOSTONHOUSING.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
-
 
 dpc = gettext(c("MEAN", "MEDIAN", "STDDEV", "IQR"), "name")
 
@@ -72,7 +66,6 @@ mmstat.ui.elem("variable", "variable1", vartype = "numeric")
 mmstat.ui.elem("cex", "fontSize")
 
 param = c()
-
 
 drawIqrBoxWithPoints = function(x, jitter, ylim, box.param = NULL, points.param = NULL) {
   if (is.list(points.param) || is.null(points.param) || points.param) {
@@ -94,7 +87,6 @@ drawIqrBoxWithPoints = function(x, jitter, ylim, box.param = NULL, points.param 
     suppressWarnings(do.call("lines", box.param))
   }
 }
-
 
 server = shinyServer(function(input, output, session) {
   
@@ -267,11 +259,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   
@@ -326,11 +315,7 @@ ui = shinyUI(fluidPage(
       htmlOutput("logText")
 ))
   
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
