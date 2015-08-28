@@ -1,55 +1,51 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATconfi_pi
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATconfi_pi
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows an interactive interface to show the coverage of confidence intervals for proportions.
-#               Samples are drawn from the whole population and the mean with corresponding
-#               confidence interval is estimated. The user can check whether the estimated
-#               confidence interval cover the population mean (green dashed line).
-#               One can adjust the confidence level (1-alpha) and the sample size (n).
-#               The upper panel shows the previously estimated confidence intervals and
-#               the lower panel shows the distribution of the whole population and sample
-#               The user can choose variables from the data sets CREDIT, BOSTONHOUSING
-#               and TITANIC.
+# Description:      Shows an interactive interface to show the coverage of confidence intervals for proportions.
+#                   Samples are drawn from the whole population and the mean with corresponding
+#                   confidence interval is estimated. The user can check whether the estimated
+#                   confidence interval cover the population mean (green dashed line).
+#                   One can adjust the confidence level (1-alpha) and the sample size (n).
+#                   The upper panel shows the previously estimated confidence intervals and
+#                   the lower panel shows the distribution of the whole population and sample
+#                   The user can choose variables from the data sets CREDIT, BOSTONHOUSING
+#                   and TITANIC.
 # ------------------------------------------------------------------------------
-# Datafiles:    CREDIT.rds, BOSTONHOUSING.rds, TITANIC.rds
+# Keywords:         distribution, plot, confidence interval, sampling, mean,
+#                   visualization, data visualization, estimation, parameter,
+#                   interactive
 # ------------------------------------------------------------------------------
-# Inputs:       interactive user choice
-#               MMSTAThelper_function.r
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the one confidence interval of the variable AGE of data set TITANIC.               
+# Example:          Shows the one confidence interval of the variable AGE of data set TITANIC.               
 # ------------------------------------------------------------------------------
-# See also:     KI, MVAdrafthousing, MMSTATtime_series_1, MMSTATlinreg, 
-#               MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
-#               MMSTAThelper_function
+# See also:         KI, MVAdrafthousing, MMSTATtime_series_1, MMSTATlinreg, 
+#                   MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
+#                   MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     distribution, plot, confidence interval, sampling, mean,
-#               visualization, data visualization, estimation, parameter,
-#               interactive
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CREDIT.rds, BOSTONHOUSING.rds, TITANIC.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
 ##############################################################################
-
 
 mmstat$vartype = "binvars"
 shiny = sessionInfo()$otherPkgs$shiny
@@ -147,13 +143,11 @@ server = shinyServer(function(input, output, session) {
   output$cexUI = renderUI({
     mmstat.ui.call("cex")
   })
-  
   output$variableUI = renderUI({
     inp = mmstat.getValues(NULL, dataset = input$dataset)
     mmstat.ui.call("variable", 
                    choices = mmstat.getVarNames(inp$dataset, "binary"))
   })
-  
   output$sizeUI = renderUI({
     var = getVar()
     mmstat.ui.call("size", ticks = var$ticks, max = length(var$ticks))
@@ -168,7 +162,6 @@ server = shinyServer(function(input, output, session) {
     var
   })
   
-
   getSize = reactive({
     var = getVar()
     inp = mmstat.getValues(NULL, size = input$size)
@@ -189,10 +182,10 @@ server = shinyServer(function(input, output, session) {
                            conflevel = input$conflevel)
     if (inp$speed > 0) 
       invalidateLater(500 / inp$speed, session)
-    var    = getVar()
-    index  = sample(length(var$values), size = getSize(), replace = T)
-    sample = var$values[index]
-    nci    = length(confint)
+      var    = getVar()
+      index  = sample(length(var$values), size = getSize(), replace = T)
+      sample = var$values[index]
+      nci    = length(confint)
     if (nci > 0) 
       xlim = confint[[nci]]$xlim else xlim = NULL
       confint[[nci + 1]] <<- CIpi(sample, mmstat$UI$conflevel$ticks[inp$conflevel]/100, 
@@ -315,9 +308,6 @@ server = shinyServer(function(input, output, session) {
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
 ##############################################################################
-
-
-
 ui = shinyUI(fluidPage(
     
   div(class="navbar navbar-static-top",
@@ -371,18 +361,9 @@ ui = shinyUI(fluidPage(
   )
 )
 
-  
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-#
-
-
-
-
-
-
-
