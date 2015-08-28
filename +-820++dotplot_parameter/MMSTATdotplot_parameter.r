@@ -1,47 +1,44 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATdotplot_parameter
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdotplot_parameter
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows the one dimensional dotplot in a choosable type (overplot, jitter, stack).
-#               One can add the mean and the median to show the location parameters of one
-#               dimensional data as vertical lines. The measures range and interquartile range (IQR)
-#               can be shown.
-#               The user can choose between variables of the CARS and USCRIME data sets.
+# Description:      Shows the one dimensional dotplot in a choosable type (overplot, jitter, stack).
+#                   One can add the mean and the median to show the location parameters of one
+#                   dimensional data as vertical lines. The measures range and interquartile range (IQR)
+#                   can be shown.
+#                   The user can choose between variables of the CARS and USCRIME data sets.
 # ------------------------------------------------------------------------------
-# Datafiles:    CARS.rds, USCRIME.rds
+# Keywords:         mean, median, plot, scatterplot, quantile, visualization,
+#                   data visualization, estimation, parameter, interactive, 
+#                   parametric, uscrime
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the dotplot with with additional lines to show the mean, 
-#               median, range and interquantile range for the variable PRICE of the
-#               CARS data set.             
+# Example:          Shows the dotplot with with additional lines to show the mean, 
+#                   median, range and interquantile range for the variable PRICE of the
+#                   CARS data set.             
 # ------------------------------------------------------------------------------
-# See also:     BCS_Boxplot, BCS_Boxplot2, MVAboxcar, SMSboxbank6
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         BCS_Boxplot, BCS_Boxplot2, MVAboxcar, SMSboxbank6
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     mean, median, plot, scatterplot, quantile, visualization,
-#               data visualization, estimation, parameter, interactive, 
-#               parametric, uscrime
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CARS.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
-source("MMSTAThelper_function.r")
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
 
+source("MMSTAThelper_function.r")
 
 ##############################################################################
 ############################### SUBROUTINES ##################################
@@ -300,5 +297,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
