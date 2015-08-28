@@ -1,50 +1,45 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATdotplot_location
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdotplot_location
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows the one dimensional dotplot in a choosable type (overplot, jitter, stack).
-#               One can add the mean and the median to show the location parameters of one
-#               dimensional data as vertical lines.
-#               The user can choose between variables of the CARS and USCRIME data sets.
+# Description:      Shows the one dimensional dotplot in a choosable type (overplot, jitter, stack).
+#                   One can add the mean and the median to show the location parameters of one
+#                   dimensional data as vertical lines.
+#                   The user can choose between variables of the CARS and USCRIME data sets.
 # ------------------------------------------------------------------------------
-# Datafiles:    CARS.rds, USCRIME.rds
+# Keywords:         mean, median, plot, scatterplot, quantile, visualization,
+#                   data visualization, parameter, interactive, parametric, uscrime 
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the dotplot of the variable POPULATION of the 
-#               data set USCRIME.        
+# Example:          Shows the dotplot of the variable POPULATION of the 
+#                   data set USCRIME.        
 # ------------------------------------------------------------------------------
-# See also:     MVAbluepullover, BCS_Boxplot, BCS_Boxplot2, MVAclususcrime
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         MVAbluepullover, BCS_Boxplot, BCS_Boxplot2, MVAclususcrime
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     mean, median, plot, scatterplot, quantile, visualization,
-#               data visualization, parameter, interactive, parametric, uscrime     
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CARS.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### helper function ##########################################################
-##############################################################################
+
 
 mmstat.getValues = function (local, ...) {
   ret <<- list(...)
@@ -62,11 +57,8 @@ mmstat.getValues = function (local, ...) {
   ret
 }
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
-
 
 mmstat$UI = list(  dataset   = list(inputId = "dataset", 
                                     label   = gettext("Select a data set"),
@@ -205,10 +197,8 @@ server = shinyServer(function(input, output, session) {
 })
 
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class ="navbar navbar-static-top",
@@ -254,11 +244,7 @@ ui = shinyUI(fluidPage(
     htmlOutput("logText")
   ))
   
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
