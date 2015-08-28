@@ -3,23 +3,20 @@
 # ------------------------------------------------------------------------------
 # Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:      Shows either a 2D or 3D scatterplot. One has also the option to compute
-#                   Pearson's correlation and Spearman's rank correlation for variables of
-#                   the data sets CARS, DECATHLON and USCRIME.
+# Description:      Shows either a 2D or 3D scatterplot. One has also the option to compute Pearson's correlation and
+#                   Spearman's rank correlation for variables of the data sets CARS, DECATHLON and USCRIME.
 # ------------------------------------------------------------------------------
-# Keywords:         plot, scatterplot, correlation, data visualization, 
-#                   visualization, estimation, parameter, interactive, uscrime, 3D
+# Keywords:         plot, scatterplot, correlation, data visualization, visualization, estimation, parameter, interactive,
+#                   uscrime, 3D, US crime data set
 # ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:          Shows the 2-dimensional scatterplot for the variables PRICE and MILEAGE
-#                   in the data set CARS.     
+# Example:          Shows the 2-dimensional scatterplot for the variables PRICE and MILEAGE in the data set CARS.     
 # ------------------------------------------------------------------------------
-# See also:         COPcorrelation1, COPcorrelation2, COPhac4firmsscatter, SFE5dim,
-#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         COPcorrelation1, COPcorrelation2, COPhac4firmsscatter, SFE5dim, MMSTATtime_series_1, MMSTATlinreg,
+#                   MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Author:           Yafei Xu
 # ------------------------------------------------------------------------------
@@ -279,7 +276,6 @@ server = shinyServer(function(input, output, session) {
     mmstat.getLog(session)
   })
 })
-
 
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
