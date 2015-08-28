@@ -1,46 +1,43 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATdice_game
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdice_game
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows the conditional probability that the dice is either fair or loaded
-#               given the number of rolled sixes (X) in the upper panel.
-#               The lower panel shows a bar plot of the conditional probability to roll
-#               a specific number of sixes given a fair/loaded dice.
-#               The user can interactively choose (1) the number of rolls,
-#               (2) the number of rolled sixes for the upper panel and (3) the probability
-#               to roll a six with the loaded dice.
+# Description:      Shows the conditional probability that the dice is either fair or loaded
+#                   given the number of rolled sixes (X) in the upper panel.
+#                   The lower panel shows a bar plot of the conditional probability to roll
+#                   a specific number of sixes given a fair/loaded dice.
+#                   The user can interactively choose (1) the number of rolls,
+#                   (2) the number of rolled sixes for the upper panel and (3) the probability
+#                   to roll a six with the loaded dice.
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Keywords:         conditional distribution, plot, data visualization, 
+#                   visualization, cdf, interactive, estimation, parameter, 
+#                   parametric  
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Example:      The number of rolls is set to 20, the number of sixes is set to 1
-#               and the probability for six with loaded dice is set to 0.66.          
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# See also:     BCS_Hist1, BCS_Hist2, MVAcondnorm, COPdaxnormhist
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# Example:          Sets the number of rolls equal to 20, the number of sixes is set to 1
+#                   and the probability for six with loaded dice is set to 0.66.          
 # ------------------------------------------------------------------------------
-# Keywords:     conditional distribution, plot, data visualization, 
-#               visualization, cdf, interactive, estimation, parameter, 
-#               parametric           
+# See also:         BCS_Hist1, BCS_Hist2, MVAcondnorm, COPdaxnormhist
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
-source("MMSTAThelper_function.r")
 
+source("MMSTAThelper_function.r")
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
@@ -199,5 +196,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
