@@ -1,57 +1,50 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATconfi_two_means
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATconfi_two_means
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Estimates and plots the confidence interval for the difference of two means 
-#               from two groups. The user can interactivaly choose the confidence level,
-#               the respective sample sizes, and whether to assume equal or unequal variance.
-#               In the lower panel, the population is shown and the interquartile range of
-#               the sample is indicated by boxes.
-#               Also, the user can choose between three data sets and set the variable and
-#               group variable used to compute draw the samples
+# Description:      Estimates and plots the confidence interval for the difference of two means 
+#                   from two groups. The user can interactivaly choose the confidence level,
+#                   the respective sample sizes, and whether to assume equal or unequal variance.
+#                   In the lower panel, the population is shown and the interquartile range of
+#                   the sample is indicated by boxes.
+#                   Also, the user can choose between three data sets and set the variable and
+#                   group variable used to compute draw the samples
 # ------------------------------------------------------------------------------
-# Datafiles:    ALLBUS2002-GENERAL.rds, ALLBUS2004-GENERAL.rds,
-#               ALLBUS2012-GENERAL.rds
+# Keywords:         plot, sampling, confidence interval, mean, population,
+#                   visualization, data visualization, parameter, interactive, 
+#                   t-distribution, distribution, estimation
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the confidence interval for the settings: confidence level = 0.95,
-#               sample size of group one = 55, sample size of group 2 = 70.
-#               The considered data set is ALLBUS2012-GENERAL.rds and the variable is AGE.
+# Example:          Shows the confidence interval for the settings: confidence level = 0.95,
+#                   sample size of group one = 55, sample size of group 2 = 70.
+#                   The considered data set is ALLBUS2012-GENERAL.rds and the variable is AGE.
 # ------------------------------------------------------------------------------
-# See also:     KI, BCS_Boxplot, BCS_Boxplot2, MVAdrafthousing 
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         KI, BCS_Boxplot, BCS_Boxplot2, MVAdrafthousing 
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     plot, sampling, confidence interval, mean, population,
-#               visualization, data visualization, parameter, interactive, 
-#               t-distribution, distribution, estimation
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        ALLBUS2002-GENERAL.rds, ALLBUS2004-GENERAL.rds,
+#                   ALLBUS2012-GENERAL.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-
 # please set working directory setwd('C:/...') 
-
-# setwd('~/...')      # linux/mac os
+# setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ################################# server #####################################
-##############################################################################
-
 
 mmstat.ui.elem("conflevel", "confidenceLevel")
 mmstat.ui.elem("varequal", "checkboxInput", 
@@ -339,12 +332,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 #################################### ui ######################################
-##############################################################################
 
 ui = shinyUI(fluidPage( 
   div(class ="navbar navbar-static-top",
@@ -403,15 +392,7 @@ ui = shinyUI(fluidPage(
   )
 )
  
- 
-##############################################################################
 ############################### SUBROUTINES ##################################
-### shinyApp #################################################################
-##############################################################################
+################################ shinyApp ####################################
 
 shinyApp(ui = ui, server = server)
-
-#
-
-
-
