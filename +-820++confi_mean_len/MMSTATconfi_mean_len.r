@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
-# Name of Quantlet: MMSTAT
+# Name of Quantlet: MMSTAT_confi_mean_len
 # ------------------------------------------------------------------------------
-# Published in:     MMSTATconfi_mean_len
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
 # Description:      Provides an interactive interface of the confidence interval length in the cases of both known and
 #                   unknown standard deviation. The user can choose the confidence level, sample size and standard
@@ -11,10 +11,11 @@
 # Keywords:         plot, confidence interval, variance, mean, interactive, graphical representation, visualization,
 #                   normal-distribution, parameter, parametric, normal
 # ------------------------------------------------------------------------------
-# Input             MMSTAThelper_function
-#                   Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Output:           Shows the confidence interval length under known and unknown standard deviation for a sample size of 100,
+# Output:           Options: interactive user choice
+# ------------------------------------------------------------------------------
+# Example:          Shows the confidence interval length under known and unknown standard deviation for a sample size of 100,
 #                   standard deviation = 5 and a confidence level = 95%.
 #                   Interactive user choice.
 # ------------------------------------------------------------------------------
@@ -24,15 +25,14 @@
 # Author:           Yafei Xu
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
+# please use "Esc" key to jump out of the Shiny app
 rm(list = ls(all = TRUE))
 graphics.off()
 
-# please set working directory
-# setwd("C:/...")     # windows
-# setwd("/Users/...") # mac os
-# setwd("~/...")      # linux
+# please set working directory setwd('C:/...') 
+# setwd('~/...')    # linux/mac os
+# setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
 ############################### SUBROUTINES ##################################
@@ -59,7 +59,6 @@ mmstat.ui.elem("cex", "fontSize")
 
 sqr    = function(x) { return(x*x) }
 server = shinyServer(function(input, output, session) {  
-  
   output$conflevelUI = renderUI({ mmstat.ui.call('conflevel') })
   output$sigmavarUI  = renderUI({ mmstat.ui.call('sigmavar') })
   output$lengthUI    = renderUI({ mmstat.ui.call('length') })
@@ -80,10 +79,10 @@ server = shinyServer(function(input, output, session) {
     mmstat.log(sprintf('outputConfPlot'))
     size = max(30, getSize())
     inp  = mmstat.getValues(NULL, 
-                          conflevel = input$conflevel, 
-                          sigmavar  = input$sigmavar, 
-                          length    = input$length, 
-                          cex       = input$cex)
+                            conflevel = input$conflevel, 
+                            sigmavar  = input$sigmavar, 
+                            length    = input$length, 
+                            cex       = input$cex)
     nval = 5:size
     oma  = mmstat$UI$conflevel$ticks[inp$conflevel]/100
     ln   = 2 * inp$sigmavar / sqrt(nval) * qnorm(1 - (1 - oma) / 2)
