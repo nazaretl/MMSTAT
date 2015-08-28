@@ -1,49 +1,51 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATdistribution_hyper
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdistribution_hyper
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  It shows the pdf with histogram and the cdf with step function
-#               for hyper-geometric distribution. Options can be set for diverse
-#               parameters of this distribution.
+# Description:      Produces an interactive interface to show the probability mass 
+#                   function (PDF) of the hypergeometric distribution. The default settings produce a 
+#                   histogram of the hypergeometric distribution with parameters n = 8,
+#                   N = 20 and M = 6. The user can interactively choose a different 
+#                   number of draws (n), a different number of population size (N) 
+#                   and a different number of success states in the population (M). 
+#                   The user can also choose to show the CDF of the hypergeometric 
+#                   distribution with a step function. The user can choose two
+#                   other distributions: the binomial distribution and 
+#                   the Poisson distribution.
+# ------------------------------------------------------------------------------ 
+# Keywords:         discrete, histogram, plot, poisson, binomial, 
+#                   data visualization, empirical, estimation, parameter, 
+#                   parametric, visualization, cdf, interactive, pdf 
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      In the main panel it shows an example of histogram for 
-#               hypergeometric distribution with sample size of 20 and number
-#               of success of 6 and number of draws of 8. 
+# Example:          Shows the probability mass function 
+#                   of the hypergeometric distribution with number of draws (n = 8), number
+#                   of success states in the population (M = 6) and population size (N = 20)
+#                   chosen from slide-bars. One can see the PDF plotted as gray bins. 
 # ------------------------------------------------------------------------------
-# See also:     BCS_Hist1, BCS_Binhyper, BCS_Hist2, SPMHistoConstruct,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         BCS_Hist1, BCS_Binhyper, BCS_Hist2, SPMHistoConstruct,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     discrete, histogram, plot, visualization, distribution,
-#               parameter, interactive   
-# ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
-
 
 gv     = list(dist = "mmstat", xlim = NULL, ylim = NULL)
 distrd = "HYPER"
@@ -336,11 +338,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(   
     
@@ -409,12 +408,8 @@ ui = shinyUI(fluidPage(
 
       htmlOutput("logText")
   ))
-  
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
