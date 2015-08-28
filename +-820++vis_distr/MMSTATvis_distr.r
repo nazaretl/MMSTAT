@@ -1,55 +1,50 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATvis_distr
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATvis_distr
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows an interactive interface with 4 plots for univariate data
-#               (dotplot, histogram, boxplot, ECDF). The user can choose the dotplot
-#               type (overplot, jitter, stack), the number of bins in the histogram,
-#               and whether additional lines to indicate mean and variance are shown.
-#               The lower panel summarizes robust and non-robust location and dispersion
-#               parameters for the selected variable.
-#               Furthermore, the user can choose variables of the data sets
-#               USCRIME, CARS and DECATHLON.
+# Description:      Shows an interactive interface with 4 plots for univariate data
+#                   (dotplot, histogram, boxplot, ECDF). The user can choose the dotplot
+#                   type (overplot, jitter, stack), the number of bins in the histogram,
+#                   and whether additional lines to indicate mean and variance are shown.
+#                   The lower panel summarizes robust and non-robust location and dispersion
+#                   parameters for the selected variable.
+#                   Furthermore, the user can choose variables of the data sets
+#                   USCRIME, CARS and DECATHLON.
 # ------------------------------------------------------------------------------
-# Datafiles:    CARS.rds, USCRIME.rds, DECATHLON.rds
+# Keywords:         plot, histogram, boxplot, mean, variance, median, quantile,
+#                   visualization, data visualization, parameter, interactive, 
+#                   uscrime, binwidth, standard deviation, univariate, empirical,
+#                   cdf
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows variable visualizations for the variable POPULATION in the data
-#               set USCRIME.     
+# Example:          Shows variable visualizations for the variable POPULATION in the data
+#                   set USCRIME.     
 # ------------------------------------------------------------------------------
-# See also:     BCS_Boxplot, BCS_Hist1, BCS_Hist2, MVAboxcar, empcdf,
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# See also:         BCS_Boxplot, BCS_Hist1, BCS_Hist2, MVAboxcar, empcdf,
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     plot, histogram, boxplot, mean, variance, median, quantile,
-#               visualization, data visualization, parameter, interactive, 
-#               uscrime, binwidth, standard deviation, univariate, empirical,
-#               cdf
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        CARS.rds, USCRIME.rds, DECATHLON.rds
 # ------------------------------------------------------------------------------
 
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ############################ assistant helper ################################
-##############################################################################
 
 mmstat.html = function(file, ...) {
   stopif (!file.exists(file), sprintf("File '%s' does not exist", file))
@@ -65,11 +60,8 @@ mmstat.html = function(file, ...) {
   return(html)
 }
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ################################# server #####################################
-##############################################################################
-
 
 dpc = gettext(c("overplot", "jitter", "stack"), "name")
 
@@ -286,10 +278,8 @@ server = shinyServer(function(input, output, session) {
   
 })
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 #################################### ui ######################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class = "navbar navbar-static-top",
@@ -344,11 +334,8 @@ ui = shinyUI(fluidPage(
     htmlOutput("distText"))),  
     htmlOutput("logText")
 ))
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ################################ shinyApp ####################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
