@@ -1,50 +1,45 @@
 # ------------------------------------------------------------------------------
-# Book:         MMStat
+# Name of Quantlet: MMSTATrank_correlation
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATrank_correlation
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Shows a two dimensional contingency table. In the table, the
-#               correlation measures Spearman's rho and Kendall's tau can 
-#               be shown. The user can interactively choose the row and column variables.
+# Description:      Shows a two dimensional contingency table. In the table, the
+#                   correlation measures Spearman's rho and Kendall's tau can 
+#                   be shown. The user can interactively choose the row and column variables.
 # ------------------------------------------------------------------------------
-# Datafiles:    ALLBUS1992-ECON.rds, ALLBUS2002-ECON.rds, ALLBUS2012-ECON.rds,
-#               ALLBUS1994-TRUST.rds, ALLBUS2002-TRUST.rds, ALLBUS2012-TRUST.rds
+# Keywords:         Kendalls Tau, correlation, contingency table, discrete, 
+#                   dispersion analysis, parameter, interactive
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:      Shows the contingency table using the variables
-#               of TRUST:.HEALTH.SERVICE and TRUST:.ARMY. The Spearman's rank
-#               correlation and Kendall's rank correlation are computed.               
+# Example:          Shows the contingency table using the variables
+#                   of TRUST:.HEALTH.SERVICE and TRUST:.ARMY. The Spearman's rank
+#                   correlation and Kendall's rank correlation are computed.               
 # ------------------------------------------------------------------------------
-# See also:     MVAdrug, MVAdrugsim, COPcorrelation1, MMSTATtime_series_1, 
-#               MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
-#               MMSTATassociation, MMSTAThelper_function
+# See also:         MVAdrug, MVAdrugsim, COPcorrelation1, MMSTATtime_series_1, 
+#                   MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
+#                   MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Keywords:     Kendalls Tau, correlation, contingency table, discrete, 
-#               dispersion analysis, parameter, interactive
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Datafiles:        ALLBUS1992-ECON.rds, ALLBUS2002-ECON.rds, ALLBUS2012-ECON.rds,
+#                   ALLBUS1994-TRUST.rds, ALLBUS2002-TRUST.rds, ALLBUS2012-TRUST.rds
 # ------------------------------------------------------------------------------
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list=ls(all=TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
+
 source("MMSTAThelper_function.r")
 
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
-##############################################################################
 
 mmstat$vartype = 'ordvars'
 mmstat.ui.elem('coeff', 'checkboxGroupInput',
@@ -115,11 +110,8 @@ server = shinyServer(function(input, output, session) {
   })
 })
 
-
-##############################################################################
 ############################### SUBROUTINES ##################################
 ### ui #######################################################################
-##############################################################################
 
 ui = shinyUI(fluidPage(
   div(class="navbar navbar-static-top",
@@ -132,7 +124,6 @@ ui = shinyUI(fluidPage(
                                            gettext("Data choice"), TRUE)),
                    column(2, checkboxInput("showoptions", 
                                            gettext("Options"), FALSE))))),
-    
   sidebarLayout(
     sidebarPanel(
       conditionalPanel(
@@ -156,11 +147,8 @@ ui = shinyUI(fluidPage(
 
   htmlOutput("logText")  
 ))
-##############################################################################
+
 ############################### SUBROUTINES ##################################
 ### shinyApp #################################################################
-##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
