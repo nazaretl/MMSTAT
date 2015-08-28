@@ -1,58 +1,52 @@
 # ------------------------------------------------------------------------------
-# Book:         MMSTAT
+# Name of Quantlet: MMSTATdistribution_binomial
 # ------------------------------------------------------------------------------
-# Quantlet:     MMSTATdistribution_binom
+# Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:  Produces an interactive interface to show the probability mass 
-#               function (PDF) of the binomial distribution. The default settings produce a 
-#               histogram of the binomial distribution with parameters n = 10 and
-#               p = 0.5. The user can interactively choose a different 
-#               number of draws (n) and a different probability of success per draw (p). 
-#               The user can also choose to show the CDF of the binomial 
-#               distribution with a step function. The user can choose two
-#               other distributions: the hyper-geometric distribution and 
-#               the Poisson distribution.
+# Description:      Produces an interactive interface to show the probability mass 
+#                   function (PDF) of the binomial distribution. The default settings produce a 
+#                   histogram of the binomial distribution with parameters n = 10 and
+#                   p = 0.5. The user can interactively choose a different 
+#                   number of draws (n) and a different probability of success per draw (p). 
+#                   The user can also choose to show the CDF of the binomial 
+#                   distribution with a step function. The user can choose two
+#                   other distributions: the hyper-geometric distribution and 
+#                   the Poisson distribution.
 # ------------------------------------------------------------------------------
-# Inputs:       MMSTAThelper_function
-#               Options: interactive user choice
+# Keywords:         discrete, histogram, plot, poisson, binomial, 
+#                   data visualization, empirical, estimation, parameter, 
+#                   parametric, visualization, cdf, interactive, pdf
 # ------------------------------------------------------------------------------
-# output:       Interactive shiny application
+# Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Example:      The given application example shows the probaility mass function 
-#               of the binomial distribution with number of draws (n = 10) and probability
-#               of success per draw (p = 0.5) chosen from slide-bars. One can see the PDF
-#               plotted as gray bins. 
+# output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# See also:     BCS_Hist1, BCS_Hist2, BCS_Binpdf, BCS_Binompdf, 
-#               MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#               MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+# Example:          Shows the probaility mass function 
+#                   of the binomial distribution with number of draws (n = 10) and probability
+#                   of success per draw (p = 0.5) chosen from slide-bars. One can see the PDF
+#                   plotted as gray bins. 
 # ------------------------------------------------------------------------------
-# Keywords:     discrete, histogram, plot, poisson, binomial, 
-#               data visualization, empirical, estimation, parameter, 
-#               parametric, visualization, cdf, interactive, pdf
+# See also:         BCS_Hist1, BCS_Hist2, BCS_Binpdf, BCS_Binompdf, 
+#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:       Yafei Xu
+# Author:           Yafei Xu
 # ------------------------------------------------------------------------------ 
 
-
-# please use "Esc" key to jump out the run of Shiny app
-# clear history and close windows
-# rm(list = ls(all = TRUE))
+# please use "Esc" key to jump out of the Shiny app
+rm(list = ls(all = TRUE))
 graphics.off()
 
-
 # please set working directory setwd('C:/...') 
-
 # setwd('~/...')    # linux/mac os
 # setwd('/Users/...') # windows
-source("MMSTAThelper_function.r")
 
+source("MMSTAThelper_function.r")
 
 ##############################################################################
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
 ##############################################################################
-
 
 gv     = list(dist = "mmstat", xlim = NULL, ylim = NULL)
 distrd = "BINOM"
@@ -425,5 +419,3 @@ ui = shinyUI(fluidPage(
 ##############################################################################
 
 shinyApp(ui = ui, server = server)
-
-#
