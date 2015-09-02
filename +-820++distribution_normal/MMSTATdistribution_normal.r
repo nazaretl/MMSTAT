@@ -3,22 +3,24 @@
 # ------------------------------------------------------------------------------
 # Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:      Shows the pdf and the cdf of the normal distribution. The parameters of mean and variance can be changed
-#                   interactively. The user can also plot the exponential distribution with adjustable parameter lambda.
+# Description:      Shows the pdf and the cdf of the normal distribution. Mean and variance can be changed interactively.
+#                   The user can also plot the exponential distribution with adjustable parameter lambda.
 # ------------------------------------------------------------------------------
 # Keywords:         distribution, plot, cdf, pdf, exponential, visualization, parameter, interactive, parametric, normal,
 #                   normal-distribution, mean, variance, density
+# ------------------------------------------------------------------------------
+# See also:         norm, SFEDaxReturnDistribution, norm2, MSEedfnormal, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function, MMSTATdistribution_exponential
+# ------------------------------------------------------------------------------
+# Author:           Yafei Xu
+# ------------------------------------------------------------------------------
+# Submitted:        21/08/2015
 # ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
 # Example:          Shows the density function of the normal distribution with mean = 0 and variance = 1.  
-# ------------------------------------------------------------------------------
-# See also:         norm, SFEDaxReturnDistribution, norm2, MSEedfnormal, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function, MMSTATdistribution_exponential
-# ------------------------------------------------------------------------------
-# Author:           Yafei Xu
 # ------------------------------------------------------------------------------ 
 
 # please use "Esc" key to jump out of the Shiny app
@@ -49,7 +51,6 @@ mmstat.getValues = function (local, ...) {
   }
   ret
 }
-
 
 ############################### SUBROUTINES ##################################
 ### server ###################################################################
