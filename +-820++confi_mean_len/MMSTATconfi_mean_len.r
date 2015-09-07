@@ -11,18 +11,20 @@
 # Keywords:         plot, confidence interval, variance, mean, interactive, graphical representation, visualization,
 #                   normal-distribution, parameter, parametric, normal
 # ------------------------------------------------------------------------------
+# See also:         KI, BCS_Conf2sided, BCS_Norm3, BCS_Norm2, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean,
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function, MMSTATdistribution_normal
+# ------------------------------------------------------------------------------
+# Author:           Yafei Xu
+# ------------------------------------------------------------------------------
+# Submitted:        21/08/2015
+# ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Output:           Options: interactive user choice
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
 # Example:          Shows the confidence interval length under known and unknown standard deviation for a sample size of 100,
 #                   standard deviation = 5 and a confidence level = 95%.
 #                   Interactive user choice.
-# ------------------------------------------------------------------------------
-# See also:         KI, BCS_Conf2sided, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma,
-#                   MMSTATassociation, MMSTAThelper_function
-# ------------------------------------------------------------------------------
-# Author:           Yafei Xu
 # ------------------------------------------------------------------------------
 
 # please use "Esc" key to jump out of the Shiny app
