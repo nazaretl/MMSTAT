@@ -3,29 +3,22 @@
 # ------------------------------------------------------------------------------
 # Published in:     MMSTAT
 # ------------------------------------------------------------------------------
-# Description:      Shows an interactive interface with 4 plots for univariate data
-#                   (dotplot, histogram, boxplot, ECDF). The user can choose the dotplot
-#                   type (overplot, jitter, stack), the number of bins in the histogram,
-#                   and whether additional lines to indicate mean and variance are shown.
-#                   The lower panel summarizes robust and non-robust location and dispersion
-#                   parameters for the selected variable.
-#                   Furthermore, the user can choose variables of the data sets
-#                   USCRIME, CARS and DECATHLON.
+# Description:      Shows an interactive interface with 4 plots for univariate data (dotplot, histogram, boxplot, ECDF).
+#                   The user can choose the dotplot type (overplot, jitter, stack), the number of bins in the histogram,
+#                   and whether additional lines are shown to indicate mean and variance. The lower panel summarizes robust 
+#                   and non-robust location and dispersion parameters for the selected variable. Furthermore, the user can choose variables of the data sets USCRIME, CARS and DECATHLON.
 # ------------------------------------------------------------------------------
-# Keywords:         plot, histogram, boxplot, mean, variance, median, quantile,
-#                   visualization, data visualization, parameter, interactive, 
-#                   uscrime, binwidth, standard deviation, univariate, empirical,
-#                   cdf
+# Keywords:         plot, histogram, boxplot, mean, variance, median, quantile, visualization, data visualization,
+#                   parameter, interactive, uscrime, binwidth, standard deviation, univariate, empirical,
+#                   cdf, US crime data set
 # ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
-# Example:          Shows variable visualizations for the variable POPULATION in the data
-#                   set USCRIME.     
+# Example:          Shows variable visualizations for the variable POPULATION of the data set USCRIME.     
 # ------------------------------------------------------------------------------
-# See also:         BCS_Boxplot, BCS_Hist1, BCS_Hist2, MVAboxcar, empcdf,
-#                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+# See also:         BCS_Boxplot, BCS_Hist1, BCS_Hist2, MVAboxcar, empcdf, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
 # Author:           Yafei Xu
