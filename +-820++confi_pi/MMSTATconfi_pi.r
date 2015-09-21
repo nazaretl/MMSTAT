@@ -6,10 +6,10 @@
 # Description:      Shows an interactive interface to show the coverage of confidence intervals for proportions.
 #                   Samples are drawn from the whole population and the mean with corresponding
 #                   confidence interval is estimated. The user can check whether the estimated
-#                   confidence interval cover the population mean (green dashed line).
+#                   confidence interval covers the population mean (green dashed line).
 #                   One can adjust the confidence level (1-alpha) and the sample size (n).
 #                   The upper panel shows the previously estimated confidence intervals and
-#                   the lower panel shows the distribution of the whole population and sample
+#                   the lower panel shows the distribution of the whole population and sample.
 #                   The user can choose variables from the data sets CREDIT, BOSTONHOUSING
 #                   and TITANIC.
 # ------------------------------------------------------------------------------
@@ -19,13 +19,13 @@
 # ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:           Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
 # Example:          Shows the one confidence interval of the variable AGE of data set TITANIC.               
 # ------------------------------------------------------------------------------
 # See also:         KI, MVAdrafthousing, MMSTATtime_series_1, MMSTATlinreg, 
 #                   MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
-#                   MMSTAThelper_function
+#                   MMSTAThelper_function, MMSTATlinreg
 # ------------------------------------------------------------------------------
 # Author:           Yafei Xu
 # ------------------------------------------------------------------------------
