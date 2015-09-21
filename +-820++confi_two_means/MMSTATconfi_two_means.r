@@ -9,7 +9,7 @@
 #                   In the lower panel, the population is shown and the interquartile range of
 #                   the sample is indicated by boxes.
 #                   Also, the user can choose between three data sets and set the variable and
-#                   group variable used to compute draw the samples
+#                   group variable used to compute draw the samples.
 # ------------------------------------------------------------------------------
 # Keywords:         plot, sampling, confidence interval, mean, population,
 #                   visualization, data visualization, parameter, interactive, 
@@ -25,7 +25,8 @@
 # ------------------------------------------------------------------------------
 # See also:         KI, BCS_Boxplot, BCS_Boxplot2, MVAdrafthousing 
 #                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function,
+#                   MMSTATconfi_pi, MMSTATcorrelation
 # ------------------------------------------------------------------------------
 # Author:           Yafei Xu
 # ------------------------------------------------------------------------------
