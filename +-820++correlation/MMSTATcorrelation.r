@@ -12,14 +12,15 @@
 # ------------------------------------------------------------------------------
 # Usage:            MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# output:           Interactive shiny application
+# Output:           Interactive shiny application
 # ------------------------------------------------------------------------------
 # Example:          Shows the 2-dimensional scatterplot for the variables TOTALAREA and POPULATION
 #                   in the data set USCRIME             
 # ------------------------------------------------------------------------------
 # See also:         BCS_Linreg, SFE5dim, MVAregbank, COPcorrelation1,
 #                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
-#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
+#                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function,
+#                   MMSTATcorrelation
 # ------------------------------------------------------------------------------
 # Author:           Yafei Xu
 # ------------------------------------------------------------------------------
