@@ -3,9 +3,7 @@
 # rm(list=ls(all=TRUE))
 graphics.off()
 
-
 # General settings
-install.packages("shiny")
 libraries = c("shiny")
 lapply(libraries, function(x) if (!(x %in% installed.packages())) {
     install.packages(x)

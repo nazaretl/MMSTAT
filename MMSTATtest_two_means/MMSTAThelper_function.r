@@ -3,9 +3,7 @@
 # rm(list=ls(all=TRUE))
 graphics.off()
 
-
 # General settings
-install.packages("shiny")
 libraries = c("shiny")
 lapply(libraries, function(x) if (!(x %in% installed.packages())) {
     install.packages(x)
@@ -303,25 +301,23 @@ mmstat.ticks = function(nin, nmin = 3, tin = 11) {
 }
 
 mmstat.math = function(txt) {
-    dollar = strsplit(txt, "&", fixed = T)[[1]]
-    if (length(dollar) < 2) 
-        return(txt)
+  dollar = strsplit(txt, "&", fixed = T)[[1]]
+  if (length(dollar) < 2) 
+    return(txt)
     res = paste0("expression(paste(\"", dollar[1], "\"")
-    for (i in 2:length(dollar)) {
-        percent = strsplit(dollar[i], ";", fixed = T)[[1]]
-        lp      = length(percent)
-        if (lp == 1) 
-            res = paste0(res, ",\"", percent[1], "\"") else {
-            if (lp > 2) 
-                percent[2] = paste(percent[2:lp], sep = ";")
-                       res = paste0(res, ",", 
-					                percent[1], 
-									",\"", 
-									percent[2], "\"")
-        }
+  for (i in 2:length(dollar)) {
+    percent = strsplit(dollar[i], ";", fixed = T)[[1]]
+    lp      = length(percent)
+    if (lp == 1) 
+      res = paste0(res, ",\"", percent[1], "\"") 
+    else {
+      if (lp > 2) 
+        percent[2] = paste(percent[2:lp], sep = ";")
+        res        = paste0(res, ",", percent[1], ",\"", percent[2], "\"")
     }
-    res = paste0(res, "))")
-    eval(parse(text = res))
+  }
+  res = paste0(res, "))")
+  eval(parse(text = res))
 }
 
 is.ASCII = function(txt) {
@@ -360,16 +356,16 @@ mmstat.plotTestRegions = function(crit, xlim, ylim, cex, close = F, col = "black
   cu = max(crit[1], xlim[1])
   if (crit[1] >= xlim[1]) {
     lines(c(cu, cu), ylim, col = col)
-    text((cu + xlim[1])/2, mean(ylim), mmstat.math("\\\"&H[1];\\\""), 
+    text((cu + xlim[1])/2, mean(ylim), mmstat.math("\"&H[1];\""), 
          cex = cex, col = col)
   }
   co = min(crit[2], xlim[2])
   if (crit[2] <= xlim[2]) {
     lines(c(co, co), ylim, col = col)
-    text((co + xlim[2])/2, mean(ylim), mmstat.math("\\\"&H[1];\\\""), 
+    text((co + xlim[2])/2, mean(ylim), mmstat.math("\"&H[1];\""), 
          cex = cex, col = col)
   }
-  text((co + cu)/2, mean(ylim), mmstat.math("\\\"&H[0];\\\""), cex = cex, col = col)
+  text((co + cu)/2, mean(ylim), mmstat.math("\"&H[0];\""), cex = cex, col = col)
   if (!is.null(text)) {
     if (pos == 2) 
       text(xlim[1], mmstat.pos(ylim, -0.25), label, col = col, cex = cex, pos = 4)
@@ -377,7 +373,6 @@ mmstat.plotTestRegions = function(crit, xlim, ylim, cex, close = F, col = "black
       text(xlim[2], mmstat.pos(ylim, -0.25), label, col = col, cex = cex, pos = 2)
   }
 }
-
 
 mmstat.htest = function(...) {
     
