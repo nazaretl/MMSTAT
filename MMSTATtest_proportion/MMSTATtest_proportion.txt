@@ -1,0 +1,35 @@
+
+Name of QuantLet : MMSTATtest_proportion
+
+Published in : MMSTAT
+
+Description : 'Shows an interactive interface to show the the rejection area in a test of proportion which
+uses a normal approximation.
+The user can interactively choose the test type (two sided, less or greater), the hypothetical proportion,
+the significance level (in %) and the sample size. Also, a table with summary statistics regarding
+the sample, population and the test is given.
+The sample can be drawn for variables of the data sets
+BOSTON HOUSING and CREDIT.'
+
+Keywords : 'test, plot, scatterplot, normal distribution, normal,
+visualization, data visualization, parameter, interactive,
+normal approximation, sampling, population, Hypothesis Testing'
+
+See also : 'norm, BCS_NormPdfCdf, SMStestuscomp, hotellingstat,
+MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function'
+
+Author : Yafei Xu
+
+Submitted : 21/08/2015
+
+Input : MMSTAThelper_function
+
+Output : Interactive shiny application
+ 
+Datafiles : CREDIT.rds, BOSTONHOUSING.rds
+
+Example : 
+- 'Shows a two sided test with hypothetical proportion = 0.35,
+significance level alpha = 10 % and sample size n = 40.
+The variable SAVINGS of the CREDIT data set is selected.'

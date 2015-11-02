@@ -1,0 +1,31 @@
+
+Name of QuantLet : MMSTATrank_correlation
+
+Published in : MMSTAT
+
+Description : 'Shows a two dimensional contingency table. In the table, the
+correlation measures Spearman's rho and Kendall's tau can 
+be shown. The user can interactively choose the row and column variables.'
+
+Keywords : 'Kendalls Tau, correlation, contingency table, discrete, 
+dispersion analysis, parameter, interactive'
+
+See also : 'MVAdrug, MVAdrugsim, COPcorrelation1, MMSTATtime_series_1, 
+MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
+MMSTATassociation, MMSTAThelper_function'
+
+Author : Yafei Xu
+
+Submitted : 21/08/2015
+
+Input : MMSTAThelper_function
+
+Output : Interactive shiny application
+ 
+Datafiles : 'ALLBUS1992-ECON.rds, ALLBUS2002-ECON.rds, ALLBUS2012-ECON.rds,
+ALLBUS1994-TRUST.rds, ALLBUS2002-TRUST.rds, ALLBUS2012-TRUST.rds'
+
+Example : 
+- 'Shows the contingency table using the variables
+of TRUST:.HEALTH.SERVICE and TRUST:.ARMY. The Spearman's rank
+correlation and Kendall's rank correlation are computed.'
