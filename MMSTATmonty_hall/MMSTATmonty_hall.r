@@ -197,38 +197,38 @@ server = shinyServer(function(input, output, session) {
     invalidateLater(200, session)
     par(mfrow = c(2, 3))
     ###### [1,1]
-    ima11 = readPNG(paste("\\www\\", door(1, mh$time), sep = ""))
+    ima11 = readPNG(paste("www/", door(1, mh$time), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))   
     lim = par()
     rasterImage(ima11, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
 
   
     ###### [1,2]
-    ima12 = readPNG(paste("\\www\\", door(2, mh$time), sep = ""))
+    ima12 = readPNG(paste("www/", door(2, mh$time), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima12, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [1,3]
-    ima13 = readPNG(paste("\\www\\", door(3, mh$time), sep = ""))
+    ima13 = readPNG(paste("www/", door(3, mh$time), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima13, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [2,1]
-    ima21 = readPNG(paste("\\www\\", point(1), sep = ""))
+    ima21 = readPNG(paste("www/", point(1), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima21, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [2,2]
-    ima22 = readPNG(paste("\\www\\", point(2), sep = ""))
+    ima22 = readPNG(paste("www/", point(2), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima22, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
   
     ###### [2,3]
-    ima23 = readPNG(paste("\\www\\", point(3), sep = ""))
+    ima23 = readPNG(paste("www/", point(3), sep = ""))
     plot(5, 5, type = "n", axes = FALSE, ann = FALSE, xlim = c(0, 10), ylim = c(0, 10))
     lim = par()
     rasterImage(ima23, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
