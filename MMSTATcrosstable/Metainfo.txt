@@ -5,7 +5,7 @@ Published in : MMSTAT
 
 Description : 'Computes a contingency table. Additionally, four different 
 correlation measures can be given: Chi-square, contingency  correlation,
-corrected contingency correlation and Cramer's V.
+corrected contingency correlation and Cramer''s V.
 The user can interactively choose between variables of the data sets TITANIC
 and HAIR.EYE.COLOR.'
 
