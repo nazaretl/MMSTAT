@@ -26,5 +26,5 @@ Datafiles : CARS.rds, DECATHLON.rds, USCRIME.rds
 
 Example : 
 - 'Shows a plot of relative frequency of successful trials under
-241 times of directions in the scenario of ``keep door``. It 
+241 times of directions in the scenario of ''keep door''. It 
 converges to 1/3, which is the success probability.'
