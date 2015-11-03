@@ -33,6 +33,5 @@ Output : Interactive shiny application
 Datafiles : 'ALLBUS2012-GENERAL.rds, ALLBUS2002-GENERAL.rds,
 ALLBUS2004-GENERAL.rds'
 
-Example : 
-- 'Shows the test with alpha = 5%, size of sample 1 (n1) = 30 and 
+Example : 'Shows the test with alpha = 5%, size of sample 1 (n1) = 30 and 
 size of sample 2 (n2) = 30'
