@@ -4,7 +4,7 @@ Name of QuantLet : MMSTATrank_correlation
 Published in : MMSTAT
 
 Description : 'Shows a two dimensional contingency table. In the table, the
-correlation measures Spearman's rho and Kendall's tau can 
+correlation measures Spearman''s rho and Kendall''s tau can 
 be shown. The user can interactively choose the row and column variables.'
 
 Keywords : 'Kendalls Tau, correlation, contingency table, discrete, 
@@ -27,5 +27,5 @@ ALLBUS1994-TRUST.rds, ALLBUS2002-TRUST.rds, ALLBUS2012-TRUST.rds'
 
 Example : 
 - 'Shows the contingency table using the variables
-of TRUST:.HEALTH.SERVICE and TRUST:.ARMY. The Spearman's rank
-correlation and Kendall's rank correlation are computed.'
+of TRUST:.HEALTH.SERVICE and TRUST:.ARMY. The Spearman''s rank
+correlation and Kendall''s rank correlation are computed.'
