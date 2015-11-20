@@ -3,8 +3,7 @@
 
 ## ![qlogo](https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png) **MMSTAT_confi_mean_len**
 
-<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/shiny_logo.png" width="60" />
-## [Shiny App](https://quantomas.shinyapps.io/MMSTATconfi_mean_len)
+##  <img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/shiny_logo.png" width="60" /> [Shiny App](https://quantomas.shinyapps.io/MMSTATconfi_mean_len)
 
 ```yaml
 
