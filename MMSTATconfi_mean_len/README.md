@@ -4,7 +4,7 @@
 ## ![qlogo](https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png) **MMSTAT_confi_mean_len**
 
 ## ![qlogo](https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/shiny_logo.png)
-<img src="shiny_logo.png" width="50" />
+<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/shiny_logo.png" width="50" />
 
 ```yaml
 
