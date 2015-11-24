@@ -20,7 +20,9 @@ MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean,
 MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function,
 MMSTATconfi_pi, MMSTATcorrelation' 
 
-Author : Yafei Xu
+Author : Sigbert Klinke
+
+Code Editor: Yafei Xu
 
 Submitted : 
 
