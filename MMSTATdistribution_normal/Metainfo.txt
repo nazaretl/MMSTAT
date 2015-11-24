@@ -12,7 +12,9 @@ normal-distribution, mean, variance, density'
 See also : 'norm, SFEDaxReturnDistribution, norm2, MSEedfnormal, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function, MMSTATdistribution_exponential'
 
-Author : Yafei Xu
+Author : Sigbert Klinke
+
+Code Editor: Yafei Xu
 
 Submitted : 21/08/2015
 
