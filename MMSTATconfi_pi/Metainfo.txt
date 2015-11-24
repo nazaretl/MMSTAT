@@ -21,7 +21,9 @@ See also : 'KI, MVAdrafthousing, MMSTATtime_series_1, MMSTATlinreg,
 MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
 MMSTAThelper_function, MMSTATlinreg'
 
-Author : Yafei Xu
+Author : Sigbert Klinke
+
+Code Editor: Yafei Xu
 
 Submitted : 
 
