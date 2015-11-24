@@ -22,7 +22,9 @@
 #                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        CARS.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
