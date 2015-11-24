@@ -27,7 +27,9 @@
 #                   MMSTATconfmean, MMSTATconfi_sigma, MMSTATassociation, 
 #                   MMSTAThelper_function, MMSTATlinreg
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        CREDIT.rds, BOSTONHOUSING.rds, TITANIC.rds
 # ------------------------------------------------------------------------------
