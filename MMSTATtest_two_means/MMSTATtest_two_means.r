@@ -29,7 +29,9 @@
 #                   MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        ALLBUS2012-GENERAL.rds, ALLBUS2002-GENERAL.rds,
 #                   ALLBUS2004-GENERAL.rds
