@@ -22,7 +22,9 @@
 #                   MMSTATlinreg, MMSTATconfmean, MMSTATconfi_sigma, 
 #                   MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        ALLBUS1992-ECON.rds, ALLBUS2002-ECON.rds, ALLBUS2012-ECON.rds,
 #                   ALLBUS1994-TRUST.rds, ALLBUS2002-TRUST.rds, ALLBUS2012-TRUST.rds
