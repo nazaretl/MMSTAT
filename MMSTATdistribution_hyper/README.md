@@ -1,0 +1,56 @@
+
+![Q_banner](https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/banner.png)
+
+## ![qlogo](https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png) **MMSTATdistribution_hyper**
+
+```yaml
+
+Name of QuantLet : MMSTATdistribution_hyper
+
+Published in : MMSTAT
+
+Description : 'Produces an interactive interface to show the probability mass 
+function (PDF) of the hypergeometric distribution. The default settings produce a 
+histogram of the hypergeometric distribution with parameters n = 8,
+N = 20 and M = 6. The user can interactively choose a different 
+number of draws (n), a different number of population size (N) 
+and a different number of success states in the population (M). 
+The user can also choose to show the CDF of the hypergeometric 
+distribution with a step function. The user can choose two
+other distributions: the binomial distribution and 
+the Poisson distribution.'
+
+Keywords : 'discrete, histogram, plot, poisson, binomial, 
+data visualization, empirical, estimation, parameter, 
+parametric, visualization, cdf, interactive, pdf'
+
+See also : 'BCS_Hist1, BCS_Binhyper, BCS_Hist2, SPMHistoConstruct,
+MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
+MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function'
+
+Author : Sigbert Klinke
+
+Code Editor: Yafei Xu
+
+Submitted : 
+
+Input : MMSTAThelper_function
+
+Output : Interactive shiny application
+ 
+Datafiles : 
+
+Example : 
+- 'Shows the probability mass function 
+of the hypergeometric distribution with number of draws (n = 8), number
+of success states in the population (M = 6) and population size (N = 20)
+chosen from slide-bars. One can see the PDF plotted as gray bins. '
+
+```
+
+![Picture1](MMSTATditribution_hyper.png)
+
+
+```r
+
+```
