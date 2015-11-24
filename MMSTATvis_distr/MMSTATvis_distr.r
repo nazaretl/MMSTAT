@@ -21,7 +21,9 @@
 # See also:         BCS_Boxplot, BCS_Hist1, BCS_Hist2, MVAboxcar, empcdf, MMSTATtime_series_1, MMSTATlinreg, MMSTATconfmean, 
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        CARS.rds, USCRIME.rds, DECATHLON.rds
 # ------------------------------------------------------------------------------
