@@ -28,7 +28,9 @@
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function,
 #                   MMSTATconfi_pi, MMSTATcorrelation
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        ALLBUS2002-GENERAL.rds, ALLBUS2004-GENERAL.rds,
 #                   ALLBUS2012-GENERAL.rds
