@@ -22,7 +22,9 @@
 #                   MMSTATconfi_sigma, MMSTATassociation, MMSTAThelper_function,
 #                   MMSTATcorrelation
 # ------------------------------------------------------------------------------
-# Author:           Yafei Xu
+# Author :          Sigbert Klinke
+# ------------------------------------------------------------------------------
+# Code Editor:      Yafei Xu
 # ------------------------------------------------------------------------------
 # Datafiles:        CARS.rds, DECATHLON.rds, USCRIME.rds
 # ------------------------------------------------------------------------------
