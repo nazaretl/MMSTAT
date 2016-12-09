@@ -3,6 +3,8 @@
 
 ## [<img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **MMSTATcrosstable** [<img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/)
 
+## <img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/shiny_logo.png" width="60" /> [Shiny App](https://quantomas.shinyapps.io/MMSTATcrosstable)
+
 ```yaml
 
 Name of QuantLet : MMSTATcrosstable
